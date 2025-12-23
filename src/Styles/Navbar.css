@@ -1,0 +1,543 @@
+/* =============================================================================
+   1. NAVBAR WRAPPER & CORE STYLES
+============================================================================= */
+.navbar {
+  position: absolute;
+  /* Start inside hero image */
+  top: 50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  z-index: 9999;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+  /* Global font default for nav */
+}
+
+/* Scrolled state (Fixed + Glass/White) */
+.navbar.scrolled {
+  top: 0px;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Prevent body scroll when menu is open (applied via JS) */
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* =============================================================================
+   2. LOGO
+============================================================================= */
+.navbar-logo {
+  width: auto;
+  height: 90px;
+  cursor: pointer;
+  margin-left: 40px;
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .navbar-logo {
+  height: 70px;
+  /* Slight shrink on scroll */
+}
+
+/* =============================================================================
+   3. DESKTOP MENU LINKS
+============================================================================= */
+/* Container for links */
+.navbar-menu {
+  margin-right: 40px;
+  padding: 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.247);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual Link Item */
+.navbar-links li {
+  /* IMPORTANT: We do NOT want relative here for the megamenu to be full width 
+     relative to the viewport/navbar. However, usually 'li' is relative. 
+     If we want full-width dropdown, we leave this static. */
+  position: static;
+}
+
+/* The actual link styling */
+.navbar-links a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+  border-radius: 4px;
+  /* subtle touch */
+}
+
+.navbar.scrolled .navbar-links a {
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  /* As per original design */
+}
+
+/* Hover & Active States */
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: #f1c40f;
+}
+
+/* Apply Now Button */
+.apply-btn {
+  padding: 10px 24px !important;
+  background: transparent;
+  border: 1px solid;
+  color: white;
+  border-radius: 50px !important;
+  font-weight: bold;
+}
+
+.apply-btn:hover {
+  background: white;
+  color: black;
+}
+
+.navbar.scrolled .apply-btn {
+  border: 1px solid #333;
+  color: #333;
+}
+
+.navbar.scrolled .apply-btn:hover {
+  background: #333;
+  color: white;
+}
+
+/* =============================================================================
+   4. MEGA MENU (DESKTOP)
+============================================================================= */
+/* 
+   The container for the dropdown. 
+   Positioned absolute relative to .navbar (because li is static).
+   Top: 100px (navbar height) or 100% 
+*/
+.megamenu-container {
+  display: block;
+  position: absolute;
+  top: 100px;
+  /* Aligns exactly below navbar */
+  left: 0;
+  width: 100%;
+  background: white;
+  height: 0;
+  /* Animate height */
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 9998;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Active State to Show Menu */
+.megamenu-container.open,
+.dropdown-item:hover .megamenu-container {
+  height: 550px;
+  /* Fixed height from original design */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Content Wrapper */
+.megamenu-content {
+  display: flex;
+  max-width: 1400px;
+  /* Constrain max width for large screens */
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+}
+
+/* Left Intro Section */
+.megamenu-intro {
+  flex: 0 0 450px;
+  text-align: left;
+  padding-right: 40px;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.megamenu-intro h3 {
+  font-family: 'Podkava', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.megamenu-intro p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Learn More Button inside menu */
+.learn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: teal;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  width: fit-content;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.learn-btn:hover {
+  background: #006666;
+  color: white !important;
+  /* Force white text */
+}
+
+.learn-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Right Grid Section */
+.megamenu-grid {
+  flex: 1;
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  overflow-y: auto;
+  /* Just in case */
+}
+
+/* Grid Items */
+.megamenu-link-item {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.megamenu-link-item:hover {
+  background: #f9f9f9;
+}
+
+.megamenu-link-item h3 {
+  font-family: 'Podkava', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.megamenu-link-item:hover h3 {
+  color: #f1c40f;
+}
+
+.megamenu-link-item p {
+  font-size: 15px;
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.icon-vector {
+  font-size: 14px;
+  color: #f1c40f;
+}
+
+
+/* =============================================================================
+   5. MOBILE & RESPONSIVE
+============================================================================= */
+/* Utilities to hide/show */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* TABLET (up to 992px) - Switch to Hamburger */
+@media (max-width: 992px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  /* Navbar Container */
+  .navbar {
+    top: 0;
+    height: 70px;
+    padding: 0 20px;
+    background: transparent;
+    border-bottom: 1px solid #eee;
+    /* Rely on scroll state */
+    /* If responsive design needs standard bg on mobile even when not scrolled: */
+    /* background: white; border-bottom: 1px solid #eee; */
+  }
+
+  .navbar-logo {
+    height: 50px;
+    margin-left: 0;
+  }
+
+  .navbar.scrolled .navbar-logo {
+    height: 50px;
+  }
+
+  .navbar.scrolled {
+    background: white;
+  }
+
+  /* Hamburger Toggle */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* 
+     Mobile Menu Drawer 
+     We reuse .navbar-menu but position it as a fixed drawer
+  */
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    /* Hidden */
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: white;
+    margin: 0;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: none;
+    display: block;
+    /* override flex from desktop */
+    border-radius: 0;
+    backdrop-filter: none;
+  }
+
+  .navbar-menu.open {
+    right: 0;
+    /* Slide in */
+  }
+
+  /* Mobile Links Layout */
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    margin-bottom: 0;
+    position: static;
+    /* Still static */
+  }
+
+  /* Style the main links in mobile */
+  .mobile-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #333;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .navbar-links a {
+    color: #333 !important;
+    /* Force black on mobile */
+    padding: 0;
+    width: 100%;
+    display: block;
+  }
+
+  /* Separators */
+  .navbar-links li.strong,
+  .navbar-links .mobile-row {
+    border-bottom: 1px solid #eee;
+  }
+
+  hr.mobile-only {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 20px 0;
+  }
+
+  /* Apply Button Mobile */
+  .mobile-only.apply .apply-btn {
+    display: block;
+    text-align: center;
+    background: #f1c40f;
+    color: white !important;
+    border: none;
+    margin-bottom: 15px;
+    padding: 12px !important;
+  }
+
+  /* Code link */
+  .mobile-only.code a {
+    text-align: center;
+    border: 1px solid #0c1A3c;
+    color: #0c1A3c !important;
+    padding: 10px !important;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  /* Weak links */
+  .navbar-links li.weak a {
+    font-size: 14px;
+    color: #888 !important;
+    padding: 8px 0;
+  }
+
+  /* =========================================================
+     MOBILE SUBMENUS 
+     Reusing .megamenu-container logic but creating a 
+     slide-over effect on top of the mobile menu
+  ========================================================= */
+  .megamenu-container {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    left: auto;
+    /* Reset left: 0 from desktop */
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: white;
+    box-shadow: none;
+    border: none;
+    transition: right 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10000;
+    padding: 0;
+    display: block;
+    /* ensure block layout */
+  }
+
+  .megamenu-container.open {
+    height: calc(100vh - 70px);
+    right: 0;
+    /* Ensure full height */
+  }
+
+  /* Hide Desktop Content in Mobile */
+  .megamenu-intro.desktop-only,
+  .megamenu-link-item p.desktop-only {
+    display: none !important;
+  }
+
+  /* Mobile Submenu Content */
+  .megamenu-content {
+    flex-direction: column;
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .megamenu-grid {
+    display: block !important;
+    width: 100%;
+    flex: none;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .megamenu-link-item {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  .megamenu-link-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .megamenu-link-item:hover {
+    background: transparent;
+  }
+
+  .megamenu-link-item h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  /* Remove random bottom space generated by desktop intro section */
+  .megamenu-intro {
+    display: none !important;
+  }
+
+  /* Fix container padding */
+  .megamenu-content {
+    padding: 0 !important;
+  }
+
+  /* Mobile Back Button */
+  .mobile-back {
+    margin-top: 30px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+  }
+}

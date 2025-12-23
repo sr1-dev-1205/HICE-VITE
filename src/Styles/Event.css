@@ -1,0 +1,286 @@
+/* 🌐 Base Styles (as provided) */
+.events-container {
+  background: #f8f8f8;
+ 
+}
+
+.events-wrapper {
+  padding: 40px 80px;
+  background: #f8f8f8;
+  font-family: "Arial", sans-serif;
+}
+
+.events-heading {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  color: #1a2a44;
+  margin-bottom: 20px;
+}
+
+.events-heading .highlight {
+  color: #f4b400;
+  font-weight: bolder;
+  margin-right: 8px;
+  height: 100px;
+  background-color: #f4b400;
+}
+
+/* 🔝 Top Event Section */
+.events-top {
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.event-img-box {
+  flex: 1;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #009f3515;
+}
+
+.event-main-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.event-text-box {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 20px;
+  background: #fff;
+}
+
+/* 🔘 Dots */
+.dots-box {
+  margin: 15px 0;
+  text-align: center;
+  position: relative;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color: #1a2a44;
+}
+
+/* 🔄 Bottom Scroll Section */
+.events-bottom {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  
+}
+
+.scroll-track {
+  display: flex;
+  gap: 40px;
+
+  /* animation: scroll-left 30s linear infinite; removed for JS control */
+}
+
+.scroll-card {
+  
+  display: flex;
+  align-items: center;
+}
+
+.event-image {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.event-title-box {
+  padding: 10px 15px;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #101534, #00929F, #FFBD05) border-box;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-title-box p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #000;
+  line-height: 1.4;
+}
+
+.arrow-buttons {
+  display: flex;
+  text-align: center;
+  margin-top: 10px;
+  gap: 50px;
+  justify-content: center;
+  z-index: 10;
+  padding-bottom: 20px;
+}
+
+.arrow-left,
+.arrow-right {
+  width: 50px;
+  background-color: #f8f8f8;
+  height: 34px;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+/* ✨ Auto Scroll Effect */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .events-wrapper {
+    padding: 30px 40px;
+  }
+
+  .events-top {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .event-img-box {
+    margin-right: 0;
+  }
+
+  .event-main-img {
+    height: 400px;
+    object-fit: contain;
+  }
+
+  .event-text-box {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .scroll-track {
+    gap: 20px;
+  }
+
+  .event-image {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .events-wrapper {
+    padding: 20px;
+  }
+
+  .events-heading {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .events-top {
+    flex-direction: column;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .event-img-box,
+  .event-text-box {
+    width: 100%;
+  }
+
+  .event-main-img {
+    height: 350px;
+    object-fit: contain;
+  }
+
+  .event-text-box {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .vector-Event img {
+    display: none;
+  }
+
+  .scroll-track {
+    gap: 15px;
+  }
+
+  .event-title-box {
+    min-width: 240px;
+    max-width: 280px;
+  }
+
+  .arrow-buttons {
+    gap: 25px;
+    margin-top: 30px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .events-heading {
+    margin-left: -90px;
+    font-size: 20px;
+  }
+
+  .event-text-box {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    width: 40px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .event-title-box p {
+    font-size: 12px;
+    text-align: justify;
+    width: 250px;
+    height: 80px;
+  }
+  .arrow-buttons,.events-bottom{
+    display: none;
+  }
+}
