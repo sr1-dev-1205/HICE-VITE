@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/PlacementTraining.css';
-import campusBackground from '../Assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import trainer1 from '../Assets/person.jpeg';
 import Footer from './Footer';
 const PlacementTraining = () => {

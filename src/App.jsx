@@ -24,6 +24,9 @@ const MainUGPG = React.lazy(() => import("./Components/MainUGPG.jsx"));
 const Gallery = React.lazy(() => import("./Components/Gallery.jsx"));
 const InformationTech = React.lazy(() => import("./Components/InformationTech.jsx"));
 const Principles = React.lazy(() => import("./Components/Principles.jsx"));
+const Admission = React.lazy(() => import("./Components/AdmissionInformation.jsx"));
+const AdmissionPolicy = React.lazy(() => import("./Components/AdmissionPolicy.jsx"));
+const FeedbackGrievance = React.lazy(() => import("./Components/FeedbackGrievance.jsx"));
 const ClassRoom = React.lazy(() => import("./Components/ClassRoom.jsx"));
 const Library = React.lazy(() => import("./Components/Library.jsx"));
 const Hostel = React.lazy(() => import("./Components/Hostel.jsx"));
@@ -101,6 +104,9 @@ function App() {
       import("./Components/Gallery.jsx");
       import("./Components/InformationTech.jsx");
       import("./Components/Principles.jsx");
+      import("./Components/AdmissionInformation.jsx");
+      import("./Components/AdmissionPolicy.jsx");
+      import("./Components/FeedbackGrievance.jsx");
       import("./Components/ClassRoom.jsx");
       import("./Components/Library.jsx");
       import("./Components/Hostel.jsx");
@@ -133,6 +139,9 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/programs/information-technology" element={<InformationTech />} />
           <Route path="/principal-desk" element={<Principles />} />
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/admission-policy" element={<AdmissionPolicy />} />
+          <Route path="/feedback-grievance" element={<FeedbackGrievance />} />
           <Route path="/classroom" element={<ClassRoom />} />
           <Route path="/library" element={<Library />} />
           <Route path="/hostel" element={<Hostel />} />

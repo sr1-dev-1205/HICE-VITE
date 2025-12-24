@@ -1,7 +1,7 @@
 // PlacementExcellence.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/PlacementExcellence.css';
-import campusBackground from '../Assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import Footer from './Footer';
 
 // Local recruiter images (make sure these files exist in src/Assets/recruiters)

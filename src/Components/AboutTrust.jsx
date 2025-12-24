@@ -1,6 +1,6 @@
 import React from 'react';
 import "../Styles/AboutTrust.css";
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 import TrustVector from "../Assets/Vector/TrustVector.png"
 import LeftImage from "../Assets/lab.jpg";
