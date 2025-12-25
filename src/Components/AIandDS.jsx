@@ -1,9 +1,9 @@
 import React from 'react';
 import '../Styles/AcademicsMech.css';
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
-import LeftImage from '../Assets/hospital.jpg';
-import LeftImage1 from '../Assets/lab.jpg';
+import LeftImage from '../Assets/AIandDS/hospital.jpg';
+import LeftImage1 from '../Assets/AIandDS/lab.jpg';
 import TrustVector from '../Assets/Vector.png';
 import crown from '../Assets/Vector/Crown.png';
 import courseVector from '../Assets/Vector/Course-vector.png';

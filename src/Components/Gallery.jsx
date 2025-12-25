@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/Gallery.css";
-import campusBackground from "../Assets/Subtract.png";
-import youngImg from "../Assets/hospital.jpg";
-import youngImg2 from "../Assets/library.jpg";
-import portraitImg from "../Assets/hospital.jpg";
-import portraitImg2 from "../Assets/library.jpg";
+import campusBackground from "../Assets/Background.png";
+import youngImg from "../Assets/Gallery/hospital.jpg";
+import youngImg2 from "../Assets/Gallery/library.jpg";
+import portraitImg from "../Assets/Gallery/hospital.jpg";
+import portraitImg2 from "../Assets/Gallery/library.jpg";
 import Footer from "./Footer";
 
 const Gallery = () => {

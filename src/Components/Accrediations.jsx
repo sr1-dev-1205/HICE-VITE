@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Accrediations.css';
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 const Accreditations = () => {
     // Placeholder image URLs - you will replace these with your actual image paths

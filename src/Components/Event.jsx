@@ -1,9 +1,9 @@
 // src/Components/Events.jsx
 import React, { useState, useEffect } from "react";
 import "../Styles/Event.css";
-import event1 from "../Assets/event1.png";
-import event2 from "../Assets/lab.jpg";
-import event3 from "../Assets/hostel.jpg";
+import event1 from "../Assets/Event/event1.png";
+import event2 from "../Assets/Event/lab.jpg";
+import event3 from "../Assets/Event/hostel.jpg";
 import vectorEvent from "../Assets/vectorEvent.png";
 
 const eventSlides = [

@@ -1,7 +1,7 @@
 // Recruiters.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/Recruiters.css';
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 
 // Top recruiters (local assets) - put these files in src/Assets/recruiters/

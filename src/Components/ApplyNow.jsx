@@ -31,7 +31,7 @@ import {
   RefreshCw,
 } from 'lucide-react';
 import "../Styles/ApplyNow.css";
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 
 const ApplyNow = () => {
