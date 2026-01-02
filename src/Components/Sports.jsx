@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trophy, Activity, Dumbbell, Users, Flag } from "lucide-react";
 import "../Styles/Sports.css";
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import LeftImage from '../Assets/hostel.jpg';
 import LeftImage2 from '../Assets/hospital.jpg';
 import RightImage from '../Assets/Vector/Course-vector.png';

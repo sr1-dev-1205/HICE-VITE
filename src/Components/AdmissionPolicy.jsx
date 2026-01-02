@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/AdmissionPolicy.css';
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 
 const AdmissionPolicy = () => {

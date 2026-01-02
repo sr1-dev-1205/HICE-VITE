@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-right">
         <a href="/careers">Careers</a>
         <a href="http://121.200.53.156/hindusthan/" target="_blank">E-Campus Login</a>
-        <a  href={mandatoryDiscloserPDF}
+        <a href={mandatoryDiscloserPDF}
           target="_blank"
           rel="noopener noreferrer">Mandatory Discloser</a>
         <a href="/contact">Contact Us</a>

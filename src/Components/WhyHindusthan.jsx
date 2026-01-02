@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/WhyHindusthan.css';
-import campusBackground from '../Assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import Footer from './Footer';
 import LeftImage from '../Assets/hostel.jpg';
 import LeftImage2 from '../Assets/lab.jpg';

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Send, Facebook, Linkedin, Youtube, MessageCircle, Clock, Users, Star, Award, BookOpen, GraduationCap, Navigation, AlertCircle, CheckCircle, Menu, X } from 'lucide-react';
 import '../Styles/ContactUs.css';
 import Footer from './Footer';
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 const Contact = () => {
   const [activeTab, setActiveTab] = useState('contact');
   const [formData, setFormData] = useState({

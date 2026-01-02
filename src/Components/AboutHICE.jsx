@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../Styles/AboutHICE.css";
 // Import multiple images
-import AboutImg1 from "../Assets/library.jpg";
-import AboutImg2 from "../Assets/hostel.jpg";
-import AboutImg3 from "../Assets/lab.jpg";
-import AboutVectorTop from "../Assets/aboutvector2.png";
-import AboutVectorBottom from "../Assets/aboutvector1.png";
+import AboutImg1 from "../Assets/AboutHICE/library.jpg";
+import AboutImg2 from "../Assets/AboutHICE/hostel.jpg";
+import AboutImg3 from "../Assets/AboutHICE/lab.jpg";
+import AboutVectorTop from "../Assets/AboutHICE/aboutvector2.png";
+import AboutVectorBottom from "../Assets/AboutHICE/aboutvector1.png";
 const AboutHICE = () => {
   const images = [AboutImg1, AboutImg2, AboutImg3]; // Array of images
   const [currentIndex, setCurrentIndex] = useState(0);

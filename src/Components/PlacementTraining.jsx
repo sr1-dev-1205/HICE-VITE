@@ -1,7 +1,8 @@
 // PlacementTraining.jsx
 import React, { useState, useEffect } from 'react';
 import '../Styles/PlacementTraining.css';
-import campusBackground from '../assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
+import trainer1 from '../Assets/person.jpeg';
 import Footer from './Footer';
 const PlacementTraining = () => {
   const [isVisible, setIsVisible] = useState({});

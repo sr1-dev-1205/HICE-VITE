@@ -6,6 +6,8 @@ import "../Styles/Navbar.css";
 import logoLight from "../Assets/HICElogo.png";
 import logoDark from "../Assets/HICEdarklogo.png";
 import overViewIcon from "../Assets/Vector/Overview.png";
+import prospectusPDF from "../Assets/Documents/Admission-Brouchure-25-26.pdf";
+
 
 // =============================================================================
 // 📌 DATA CONFIGURATION
@@ -263,6 +265,12 @@ const Navbar = () => {
       // Standard UX: Click text -> Go to link. Click arrow -> Open submenu.
       // But let's support your logic:
     }
+    // ✅ Prospectus special case
+  if (path === "/prospectus") {
+    window.open(prospectusPDF, "_blank"); // opens PDF in new tab
+    closeAll();
+    return;
+  }
     navigate(path);
     closeAll();
   };

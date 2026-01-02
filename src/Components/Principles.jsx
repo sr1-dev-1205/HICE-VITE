@@ -1,6 +1,6 @@
 import React from 'react'
 import "../Styles/Principles.css";
-import campusBackground from '../Assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import LeftImage from "../Assets/hostel.jpg";
 import LeftImage2 from "../Assets/hospital.jpg";
 import RightImage from '../Assets/Vector.png';

@@ -1,7 +1,7 @@
 // PlacementExcellence.jsx
 import React, { useEffect, useRef } from 'react';
 import '../Styles/PlacementExcellence.css';
-import campusBackground from '../assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import Footer from './Footer';
 const PlacementExcellence = () => {
   const observerRef = useRef(null);

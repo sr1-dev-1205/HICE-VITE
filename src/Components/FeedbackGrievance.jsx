@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/FeedbackGrievance.css";
-import campusBackground from "../Assets/Subtract.png";
+import campusBackground from "../Assets/Background.png";
 import Footer from "./Footer";
 const FeedbackGrievance = () => {
   return (

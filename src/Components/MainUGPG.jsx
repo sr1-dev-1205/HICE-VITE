@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/MainUGPG.css';
-import campusBackground from '../Assets/Subtract.png';
+import campusBackground from '../Assets/Background.png';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
 
