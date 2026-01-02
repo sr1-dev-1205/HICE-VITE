@@ -125,12 +125,12 @@ const PlacementTraining = () => {
                   
                             {/* Hero Text */}
                             <div className="hero-text">
-                              <h1 className="hero-title">Placement Excellence</h1>
+                              <h1 className="hero-title">Placement Training</h1>
                               <div className="breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>Home</a> &gt; <a href="/placements" style={{ textDecoration:"none", color:"white"}}>Placements</a>
                               {" "}
                           &gt;{" "}
                           <a href="/placement-excellence" style={{ textDecoration: "none", color: "#f4b400" }}>
-                            Placement Excellence
+                            Placement Training
                           </a></div>
                               <p className="hero-description">
                                 If you are passionate and driven, explore our current openings across

@@ -1,640 +1,152 @@
 // Recruiters.jsx
-import React, { useState, useEffect, useRef } from 'react';
-import '../Styles/Recruiters.css';
-import campusBackground from "../Assets/Background.png";
+import React, { useState } from 'react';
 import Footer from './Footer';
-
-// Top recruiters (local assets) - put these files in src/Assets/recruiters/
-import googleLogo from '../Assets/recruiters/google.jpeg';
-import microsoftLogo from '../Assets/recruiters/tcs.png';
-import amazonLogo from '../Assets/recruiters/tcs.png';
-import tcsLogo from '../Assets/recruiters/tcs.png';
-import infosysLogo from '../Assets/recruiters/tcs.png';
-import wiproLogo from '../Assets/recruiters/wipro.png';
-import accentureLogo from '../Assets/recruiters/accenture.png';
-import cognizantLogo from '../Assets/recruiters/tcs.png';
-import ibmLogo from '../Assets/recruiters/tcs.png';
-import oracleLogo from '../Assets/recruiters/tcs.png';
-import adobeLogo from '../Assets/recruiters/tcs.png';
-import samsungLogo from '../Assets/recruiters/tcs.png';
-import sapLogo from '../Assets/recruiters/tcs.png';
-
-// Core / other sector logos (local)
-import lntLogo from '../Assets/recruiters/tcs.png';
-import siemensLogo from '../Assets/recruiters/tcs.png';
-import boschLogo from '../Assets/recruiters/tcs.png';
-import abbLogo from '../Assets/recruiters/tcs.png';
-import schneiderLogo from '../Assets/recruiters/tcs.png';
-import hitachiLogo from '../Assets/recruiters/tcs.png';
-
-// Consulting logos
-import deloitteLogo from '../Assets/recruiters/tcs.png';
-import eyLogo from '../Assets/recruiters/tcs.png';
-import pwcLogo from '../Assets/recruiters/tcs.png';
-import kpmgLogo from '../Assets/recruiters/tcs.png';
-import mckinseyLogo from '../Assets/recruiters/tcs.png';
-import bcgLogo from '../Assets/recruiters/tcs.png';
-
-// BFSI logos
-import iciciLogo from '../Assets/recruiters/tcs.png';
-import hdfcLogo from '../Assets/recruiters/tcs.png';
-import axisLogo from '../Assets/recruiters/tcs.png';
-import jpmLogo from '../Assets/recruiters/tcs.png';
-import gsLogo from '../Assets/recruiters/tcs.png';
-import morganLogo from '../Assets/recruiters/tcs.png';
-
-// Product / startup logos
-import flipkartLogo from '../Assets/recruiters/tcs.png';
-import paytmLogo from '../Assets/recruiters/tcs.png';
-import zomatoLogo from '../Assets/recruiters/tcs.png';
-import swiggyLogo from '../Assets/recruiters/tcs.png';
-import oyoLogo from '../Assets/recruiters/tcs.png';
-import olaLogo from '../Assets/recruiters/tcs.png';
-import razorpayLogo from '../Assets/recruiters/tcs.png';
-import freshworksLogo from '../Assets/recruiters/tcs.png';
-import zohoLogo from '../Assets/recruiters/tcs.png';
-import phonepeLogo from '../Assets/recruiters/tcs.png';
-import credLogo from '../Assets/recruiters/tcs.png';
-import byjusLogo from '../Assets/recruiters/tcs.png';
-
-// Testimonial photos (local)
-import testPhoto1 from '../Assets/recruiters/tcs.png';
-import testPhoto2 from '../Assets/recruiters/tcs.png';
-import testPhoto3 from '../Assets/recruiters/tcs.png';
-import testPhoto4 from '../Assets/recruiters/tcs.png';
-
-// MOU partner logos (local)
-import intelLogo from '../Assets/recruiters/tcs.png';
-import ciscoLogo from '../Assets/recruiters/tcs.png';
-import awsLogo from '../Assets/recruiters/tcs.png';
-import redhatLogo from '../Assets/recruiters/tcs.png';
-
-// Person fallback if needed
-import personPlaceholder from '../Assets/person.jpeg';
+import campusBackground from '../assets/Subtract.png';
+import '../Styles/Recruiters.css';
 
 const Recruiters = () => {
-  const [activeYear, setActiveYear] = useState(null);
-  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
-  const [salaryCounters, setSalaryCounters] = useState({
-    highest: 0,
-    average: 0,
-    median: 0,
-    top10: 0
-  });
+  const [activeCategory, setActiveCategory] = useState('software');
 
-  const topRecruiters = [
-    { name: 'Google', logo: googleLogo },
-    { name: 'Microsoft', logo: microsoftLogo },
-    { name: 'Amazon', logo: amazonLogo },
-    { name: 'TCS', logo: tcsLogo },
-    { name: 'Infosys', logo: infosysLogo },
-    { name: 'Wipro', logo: wiproLogo },
-    { name: 'Accenture', logo: accentureLogo },
-    { name: 'Cognizant', logo: cognizantLogo },
-    { name: 'IBM', logo: ibmLogo },
-    { name: 'Oracle', logo: oracleLogo },
-    { name: 'Adobe', logo: adobeLogo },
-    { name: 'Samsung', logo: samsungLogo }
-  ];
-
-  const categories = [
-    {
-      id: 'it',
-      title: 'IT & Software',
-      description: 'Leading tech giants and innovative startups',
-      badge: 'Top Hiring Sector',
-      companies: [
-        { name: 'Google', logo: googleLogo },
-        { name: 'Microsoft', logo: microsoftLogo },
-        { name: 'Amazon', logo: amazonLogo },
-        { name: 'Adobe', logo: adobeLogo },
-        { name: 'Oracle', logo: oracleLogo },
-        { name: 'SAP', logo: sapLogo }
-      ]
-    },
-    {
-      id: 'core',
-      title: 'Core Engineering',
-      description: 'Manufacturing and industrial leaders',
-      companies: [
-        { name: 'L&T', logo: lntLogo },
-        { name: 'Siemens', logo: siemensLogo },
-        { name: 'Bosch', logo: boschLogo },
-        { name: 'ABB', logo: abbLogo },
-        { name: 'Schneider', logo: schneiderLogo },
-        { name: 'Hitachi', logo: hitachiLogo }
-      ]
-    },
-    {
-      id: 'consulting',
-      title: 'Consulting & Analytics',
-      description: 'Strategic consulting and data science firms',
-      companies: [
-        { name: 'Deloitte', logo: deloitteLogo },
-        { name: 'EY', logo: eyLogo },
-        { name: 'PwC', logo: pwcLogo },
-        { name: 'KPMG', logo: kpmgLogo },
-        { name: 'McKinsey', logo: mckinseyLogo },
-        { name: 'BCG', logo: bcgLogo }
-      ]
-    },
-    {
-      id: 'bfsi',
-      title: 'BFSI',
-      description: 'Banking, financial services, and insurance',
-      companies: [
-        { name: 'ICICI Bank', logo: iciciLogo },
-        { name: 'HDFC Bank', logo: hdfcLogo },
-        { name: 'Axis Bank', logo: axisLogo },
-        { name: 'JPMorgan', logo: jpmLogo },
-        { name: 'Goldman Sachs', logo: gsLogo },
-        { name: 'Morgan Stanley', logo: morganLogo }
-      ]
-    },
-    {
-      id: 'product',
-      title: 'Product Companies',
-      description: 'Innovative product development companies',
-      badge: 'High Growth',
-      companies: [
-        { name: 'Flipkart', logo: flipkartLogo },
-        { name: 'Paytm', logo: paytmLogo },
-        { name: 'Zomato', logo: zomatoLogo },
-        { name: 'Swiggy', logo: swiggyLogo },
-        { name: 'OYO', logo: oyoLogo },
-        { name: 'Ola', logo: olaLogo }
-      ]
-    },
-    {
-      id: 'startups',
-      title: 'Emerging Startups',
-      description: 'Fast-growing innovative startups',
-      companies: [
-        { name: 'Razorpay', logo: razorpayLogo },
-        { name: 'Freshworks', logo: freshworksLogo },
-        { name: 'Zoho', logo: zohoLogo },
-        { name: 'PhonePe', logo: phonepeLogo },
-        { name: 'CRED', logo: credLogo },
-        { name: "Byju's", logo: byjusLogo }
-      ]
-    }
-  ];
-
-  const yearwiseRecruiters = [
-    {
-      year: '2024',
-      totalRecruiters: 245,
-      newRecruiters: 68,
-      returningRecruiters: 177,
-      companies: topRecruiters.slice(0, 8)
-    },
-    {
-      year: '2023',
-      totalRecruiters: 218,
-      newRecruiters: 52,
-      returningRecruiters: 166,
-      companies: topRecruiters.slice(0, 6)
-    },
-    {
-      year: '2022',
-      totalRecruiters: 195,
-      newRecruiters: 45,
-      returningRecruiters: 150,
-      companies: topRecruiters.slice(0, 5)
-    }
-  ];
-
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Rajesh Kumar',
-      designation: 'Senior HR Manager',
-      company: 'Google India',
-      photo: testPhoto1 || personPlaceholder,
-      quote: 'The students from this institution consistently demonstrate exceptional technical skills and a strong work ethic.',
-      fullQuote: 'The students from this institution consistently demonstrate exceptional technical skills and a strong work ethic. We have been recruiting from this college for the past 5 years, and the quality of talent continues to impress us. Their problem-solving abilities and adaptability make them valuable assets to our teams.'
-    },
-    {
-      id: 2,
-      name: 'Priya Sharma',
-      designation: 'Talent Acquisition Lead',
-      company: 'Microsoft',
-      photo: testPhoto2 || personPlaceholder,
-      quote: 'One of our top partner institutions for campus hiring. The placement cell is highly professional and supportive.',
-      fullQuote: 'One of our top partner institutions for campus hiring. The placement cell is highly professional and supportive. The students are well-prepared, possess excellent communication skills, and show great enthusiasm for innovation. We look forward to continued collaboration.'
-    },
-    {
-      id: 3,
-      name: 'Anil Mehta',
-      designation: 'VP - Human Resources',
-      company: 'Infosys',
-      photo: testPhoto3 || personPlaceholder,
-      quote: 'Strong industry-academic collaboration. Students are industry-ready with practical exposure and domain knowledge.',
-      fullQuote: 'Strong industry-academic collaboration. Students are industry-ready with practical exposure and domain knowledge. The curriculum alignment with industry needs is commendable. We have hired over 200 students in the last three years with excellent retention rates.'
-    },
-    {
-      id: 4,
-      name: 'Sneha Reddy',
-      designation: 'Campus Hiring Head',
-      company: 'Amazon',
-      photo: testPhoto4 || personPlaceholder,
-      quote: 'Exceptional talent pool with strong fundamentals. The students showcase great potential for growth and leadership.',
-      fullQuote: 'Exceptional talent pool with strong fundamentals. The students showcase great potential for growth and leadership. Their technical depth combined with soft skills makes them stand out. We have seen many of them grow into leadership roles within a few years.'
-    }
-  ];
-
-  const trustFactors = [
-    { icon: '🎓', title: 'Strong Fundamentals', description: 'Rigorous academic curriculum with emphasis on core concepts' },
-    { icon: '💬', title: 'Communication Skills', description: 'Dedicated training in professional communication and presentation' },
-    { icon: '🔧', title: 'Industry Curriculum', description: 'Regular curriculum updates aligned with industry requirements' },
-    { icon: '🏭', title: 'Advanced Labs', description: 'State-of-the-art laboratories and research facilities' },
-    { icon: '🤝', title: 'Internship Pipeline', description: 'Strong internship programs with leading companies' },
-    { icon: '📈', title: 'High Retention', description: '92% of placed students complete probation successfully' }
-  ];
-
-  const mouPartners = [
-    { name: 'Intel', logo: intelLogo, type: 'R&D Partnership' },
-    { name: 'Cisco', logo: ciscoLogo, type: 'Networking Academy' },
-    { name: 'IBM', logo: ibmLogo, type: 'AI Center of Excellence' },
-    { name: 'AWS', logo: awsLogo, type: 'Cloud Training' },
-    { name: 'RedHat', logo: redhatLogo, type: 'Linux Certification' },
-    { name: 'SAP', logo: sapLogo, type: 'ERP Training' }
-  ];
-
-  const salaryStats = {
-    highest: 45.5,
-    average: 8.2,
-    median: 6.5,
-    top10: 18.5
+  const companyLogos = {
+    core: [
+      { name: 'L&T', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Larsen_%26_Toubro_logo.svg/200px-Larsen_%26_Toubro_logo.svg.png' },
+      { name: 'Tata Steel', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Tata_Steel_Logo.svg/200px-Tata_Steel_Logo.svg.png' },
+      { name: 'BHEL', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Bharat_Heavy_Electricals_Limited_logo.svg/200px-Bharat_Heavy_Electricals_Limited_logo.svg.png' },
+      { name: 'Siemens', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/200px-Siemens-logo.svg.png' },
+      { name: 'ABB', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/200px-ABB_logo.svg.png' },
+      { name: 'Schneider Electric', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Schneider_Electric_logo.svg/200px-Schneider_Electric_logo.svg.png' },
+      { name: 'Bosch', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosch-logotype.svg/200px-Bosch-logotype.svg.png' },
+      { name: 'Ashok Leyland', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ashok_Leyland_Logo.svg/200px-Ashok_Leyland_Logo.svg.png' },
+      { name: 'Mahindra', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Mahindra_Rise_logo.svg/200px-Mahindra_Rise_logo.svg.png' },
+      { name: 'Voltas', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Voltas_logo.svg/200px-Voltas_logo.svg.png' },
+      { name: 'NTPC', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/NTPC_Logo.svg/200px-NTPC_Logo.svg.png' },
+      { name: 'GAIL', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/GAIL_Logo.svg/200px-GAIL_Logo.svg.png' }
+    ],
+    software: [
+      { name: 'TCS', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/200px-Tata_Consultancy_Services_Logo.svg.png' },
+      { name: 'Infosys', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/200px-Infosys_logo.svg.png' },
+      { name: 'Wipro', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/200px-Wipro_Primary_Logo_Color_RGB.svg.png' },
+      { name: 'Cognizant', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Cognizant_logo_2022.svg/200px-Cognizant_logo_2022.svg.png' },
+      { name: 'Tech Mahindra', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Tech_Mahindra_New_Logo.svg/200px-Tech_Mahindra_New_Logo.svg.png' },
+      { name: 'HCL', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/HCLTech_logo.svg/200px-HCLTech_logo.svg.png' },
+      { name: 'Accenture', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/200px-Accenture.svg.png' },
+      { name: 'Capgemini', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capgemini_201x_logo.svg/200px-Capgemini_201x_logo.svg.png' },
+      { name: 'IBM', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png' },
+      { name: 'Oracle', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/200px-Oracle_logo.svg.png' },
+      { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png' },
+      { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png' },
+      { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png' },
+      { name: 'SAP', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/200px-SAP_2011_logo.svg.png' },
+      { name: 'Zoho', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Zoho_Logo.svg/200px-Zoho_Logo.svg.png' },
+      { name: 'Freshworks', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Freshworks_logo.svg/200px-Freshworks_logo.svg.png' }
+    ],
+    management: [
+      { name: 'Deloitte', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/200px-Deloitte.svg.png' },
+      { name: 'EY', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/EY_logo_2019.svg/200px-EY_logo_2019.svg.png' },
+      { name: 'PwC', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PwC_Logo.svg/200px-PwC_Logo.svg.png' },
+      { name: 'KPMG', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/200px-KPMG_logo.svg.png' },
+      { name: 'McKinsey', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/MC_Wordmark_Black_RGB.png/200px-MC_Wordmark_Black_RGB.png' },
+      { name: 'BCG', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/BCG_Corporate_Logo.svg/200px-BCG_Corporate_Logo.svg.png' },
+      { name: 'Bain', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bain_%26_Company_logo.svg/200px-Bain_%26_Company_logo.svg.png' },
+      { name: 'Gartner', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Gartner_logo.svg/200px-Gartner_logo.svg.png' },
+      { name: 'Aon', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Aon_Corporation_logo.svg/200px-Aon_Corporation_logo.svg.png' },
+      { name: 'Marsh', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Marsh_%26_McLennan_Companies_logo.svg/200px-Marsh_%26_McLennan_Companies_logo.svg.png' },
+      { name: 'Accenture Strategy', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/200px-Accenture.svg.png' },
+      { name: 'Cognizant Consulting', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Cognizant_logo_2022.svg/200px-Cognizant_logo_2022.svg.png' }
+    ]
   };
 
-  const trendData = [
-    { year: '2020', count: 165 },
-    { year: '2021', count: 178 },
-    { year: '2022', count: 195 },
-    { year: '2023', count: 218 },
-    { year: '2024', count: 245 }
-  ];
-
-  const scrollRef = useRef(null);
-  const salaryRef = useRef(null);
-  const trendRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('p-rec-visible');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll('.p-rec-reveal').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observerOptions = { threshold: 0.5 };
-
-    const animateCounter = (key, target) => {
-      let current = 0;
-      const increment = target / 60;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        setSalaryCounters(prev => ({ ...prev, [key]: current }));
-      }, 20);
-    };
-
-    const salaryObserver = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        animateCounter('highest', salaryStats.highest);
-        animateCounter('average', salaryStats.average);
-        animateCounter('median', salaryStats.median);
-        animateCounter('top10', salaryStats.top10);
-      }
-    }, observerOptions);
-
-    if (salaryRef.current) salaryObserver.observe(salaryRef.current);
-    return () => salaryObserver.disconnect();
-  }, []);
-
-  const toggleYear = (year) => {
-    setActiveYear(activeYear === year ? null : year);
-  };
-
-  const openTestimonial = (testimonial) => {
-    setSelectedTestimonial(testimonial);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeTestimonial = () => {
-    setSelectedTestimonial(null);
-    document.body.style.overflow = 'auto';
-  };
+  const allLogos = [...companyLogos.software, ...companyLogos.core, ...companyLogos.management];
 
   return (
-    <div className="p-rec-container">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-background">
-          <img src={campusBackground} alt="Campus Background" className="hero-bg-image" />
-        </div>
+    <div className="recruiters-page">
+     {/* Hero Section */}
+                       <section className="hero-section">
+                         <div className="hero-background">
+                           <img src={campusBackground} alt="Campus Background" className="hero-bg-image" />
+                         </div>
+                 
+                         <div className="hero-content">
+                 
+                           {/* Hero Text */}
+                           <div className="hero-text">
+                             <h1 className="hero-title">Recruiters</h1>
+                             <div className="breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>Home</a> &gt; <a href="/placements" style={{ textDecoration:"none", color:"white"}}>Placements</a>
+                             {" "}
+                         &gt;{" "}
+                         <a href="/placement-excellence" style={{ textDecoration: "none", color: "#f4b400" }}>
+                           Recruiters
+                         </a></div>
+                             <p className="hero-description">
+                               If you are passionate and driven, explore our current openings across
+                               Hindusthan Institutions and apply.
+                             </p>
+                           </div>
+                         </div>
+                       </section>
 
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">Our Recruiters</h1>
-            <div className="breadcrumb">
-              <a href="/" style={{ textDecoration:"none", color:"white"}}>Home</a> &gt; <a href="/about-us" style={{ textDecoration:"none", color:"white"}}>Placements</a> &gt; <a href="/aboutTrust" style={{ textDecoration: "none", color: "#f4b400" }}>Our Recruiters</a>
+      <section className="placement-overview-section">
+        <div className="container">
+          <div className="overview-content">
+            <div className="overview-image">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop" alt="Campus Recruitment" />
             </div>
-            <p className="hero-description">
-              Empowering careers through industry partnerships, comprehensive training, and exceptional placement opportunities.
-            </p>
+            <div className="overview-text">
+              <h2>College Placement</h2>
+              <p>The Placement and Career Development Cell at our institution is committed to fostering strong industry connections and preparing students for successful professional careers. As a newly established college, we are dedicated to building a robust network of corporate partnerships that will provide our students with diverse opportunities across various sectors.</p>
+              <p>Our vision is to create a dynamic ecosystem where academic excellence meets industry requirements. We focus on developing industry-ready skills through comprehensive training programs, workshops, and exposure to real-world challenges. Our curriculum is designed in consultation with industry experts to ensure our graduates possess the competencies that employers seek.</p>
+              <p>We are actively engaging with leading organizations across core engineering, software development, and management sectors to establish long-term recruitment partnerships. Our commitment extends to facilitating internships, industrial visits, and collaborative projects that provide students with hands-on experience and professional networking opportunities from their early academic years.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Top Recruiters Marquee */}
-      <section className="p-rec-marquee">
-        <div className="p-rec-marquee-track">
-          {[...topRecruiters, ...topRecruiters].map((recruiter, idx) => (
-            <div key={idx} className="p-rec-marquee-item" tabIndex="0">
-              <img src={recruiter.logo} alt={recruiter.name} />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Recruiters by Category */}
-      <section className="p-rec-categories p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>Recruiters by Industry</h2>
-          <p>Diverse opportunities across multiple sectors and domains</p>
-        </div>
-        <div className="p-rec-categories-grid">
-          {categories.map(category => (
-            <div key={category.id} className="p-rec-category-block">
-              {category.badge && (
-                <span className="p-rec-category-badge">{category.badge}</span>
-              )}
-              <h3>{category.title}</h3>
-              <p>{category.description}</p>
-              <div className="p-rec-category-logos">
-                {category.companies.map((company, idx) => (
-                  <div key={idx} className="p-rec-category-logo">
-                    <img src={company.logo} alt={company.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Year-wise Recruiter Participation */}
-      <section className="p-rec-yearwise p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>Year-wise Recruiter Participation</h2>
-          <p>Consistent growth in recruiter engagement and diversity</p>
-        </div>
-        <div className="p-rec-yearwise-blocks">
-          {yearwiseRecruiters.map(yearData => (
-            <div key={yearData.year} className="p-rec-year-block">
-              <div
-                className="p-rec-year-header"
-                onClick={() => toggleYear(yearData.year)}
-                role="button"
-                tabIndex="0"
-                aria-expanded={activeYear === yearData.year}
-              >
-                <h3>{yearData.year}</h3>
-                <div className="p-rec-year-stats">
-                  <span className="p-rec-year-stat">
-                    <strong>{yearData.totalRecruiters}</strong> Total
-                  </span>
-                  <span className="p-rec-year-stat p-rec-stat-new">
-                    <strong>{yearData.newRecruiters}</strong> New
-                  </span>
-                  <span className="p-rec-year-stat p-rec-stat-returning">
-                    <strong>{yearData.returningRecruiters}</strong> Returning
-                  </span>
-                </div>
-                <span className={`p-rec-year-toggle ${activeYear === yearData.year ? 'p-rec-active' : ''}`}>
-                  ▼
-                </span>
-              </div>
-              {activeYear === yearData.year && (
-                <div className="p-rec-year-content">
-                  <div className="p-rec-year-logos">
-                    {yearData.companies.map((company, idx) => (
-                      <div key={idx} className="p-rec-year-logo">
-                        <img src={company.logo} alt={company.name} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* HR Testimonials */}
-      <section className="p-rec-testimonials p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>What Recruiters Say</h2>
-          <p>Feedback from our hiring partners and industry leaders</p>
-        </div>
-        <div className="p-rec-testimonials-grid">
-          {testimonials.map(testimonial => (
-            <div
-              key={testimonial.id}
-              className="p-rec-testimonial-card"
-              onClick={() => openTestimonial(testimonial)}
-              role="button"
-              tabIndex="0"
+      <section className="recruiters-list-section">
+        <div className="container">
+          <h2 className="section-title">Recruiters Company List</h2>
+          <div className="category-tabs">
+            <button 
+              className={`tab-button ${activeCategory === 'core' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('core')}
             >
-              <div className="p-rec-testimonial-photo">
-                <img src={testimonial.photo} alt={testimonial.name} />
+              Core Companies
+            </button>
+            <button 
+              className={`tab-button ${activeCategory === 'software' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('software')}
+            >
+              Software Companies
+            </button>
+            <button 
+              className={`tab-button ${activeCategory === 'management' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('management')}
+            >
+              Management Companies
+            </button>
+          </div>
+          <div className="companies-grid">
+            {companyLogos[activeCategory].map((company, index) => (
+              <div key={index} className="company-card">
+                <img src={company.logo} alt={company.name} />
               </div>
-              <div className="p-rec-testimonial-content">
-                <p className="p-rec-testimonial-quote">"{testimonial.quote}"</p>
-                <div className="p-rec-testimonial-author">
-                  <h4>{testimonial.name}</h4>
-                  <p>{testimonial.designation}</p>
-                  <p className="p-rec-testimonial-company">{testimonial.company}</p>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="logo-loop-section">
+        <div className="logo-loop-container">
+          <div className="logo-loop">
+            {[...allLogos, ...allLogos].map((company, index) => (
+              <div key={index} className="loop-logo">
+                <img src={company.logo} alt={company.name} />
               </div>
-              <span className="p-rec-testimonial-expand">Read More →</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Why Recruiters Trust Us */}
-      <section className="p-rec-trust p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>Why Recruiters Choose Us</h2>
-          <p>Our commitment to excellence and industry readiness</p>
-        </div>
-        <div className="p-rec-trust-grid">
-          {trustFactors.map((factor, idx) => (
-            <div key={idx} className="p-rec-trust-card">
-              <div className="p-rec-trust-icon">{factor.icon}</div>
-              <h3>{factor.title}</h3>
-              <p>{factor.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Salary Snapshot */}
-      <section className="p-rec-salary p-rec-reveal" ref={salaryRef}>
-        <div className="p-rec-section-header">
-          <h2>Placement Statistics</h2>
-          <p>CTC insights and salary trends for 2024 batch</p>
-        </div>
-        <div className="p-rec-salary-grid">
-          <div className="p-rec-salary-card">
-            <div className="p-rec-salary-icon">🏆</div>
-            <h3>Highest Package</h3>
-            <div className="p-rec-salary-amount">
-              ₹ {salaryCounters.highest.toFixed(1)} <span>LPA</span>
-            </div>
-            <div className="p-rec-salary-bar" style={{ '--progress': '100%' }}></div>
+            ))}
           </div>
-          <div className="p-rec-salary-card">
-            <div className="p-rec-salary-icon">📊</div>
-            <h3>Average Package</h3>
-            <div className="p-rec-salary-amount">
-              ₹ {salaryCounters.average.toFixed(1)} <span>LPA</span>
-            </div>
-            <div className="p-rec-salary-bar" style={{ '--progress': '55%' }}></div>
-          </div>
-          <div className="p-rec-salary-card">
-            <div className="p-rec-salary-icon">📈</div>
-            <h3>Median Package</h3>
-            <div className="p-rec-salary-amount">
-              ₹ {salaryCounters.median.toFixed(1)} <span>LPA</span>
-            </div>
-            <div className="p-rec-salary-bar" style={{ '--progress': '45%' }}></div>
-          </div>
-          <div className="p-rec-salary-card">
-            <div className="p-rec-salary-icon">⭐</div>
-            <h3>Top 10% Average</h3>
-            <div className="p-rec-salary-amount">
-              ₹ {salaryCounters.top10.toFixed(1)} <span>LPA</span>
-            </div>
-            <div className="p-rec-salary-bar" style={{ '--progress': '75%' }}></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hiring Trend Overview */}
-      <section className="p-rec-trends p-rec-reveal" ref={trendRef}>
-        <div className="p-rec-section-header">
-          <h2>Hiring Growth Trend</h2>
-          <p>Year-on-year increase in recruiter participation</p>
-        </div>
-        <div className="p-rec-trends-chart">
-          {trendData.map((data, idx) => (
-            <div key={idx} className="p-rec-trend-bar-wrapper">
-              <div
-                className="p-rec-trend-bar"
-                style={{ '--height': `${(data.count / 245) * 100}%` }}
-              >
-                <span className="p-rec-trend-value">{data.count}</span>
-              </div>
-              <span className="p-rec-trend-year">{data.year}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Industry Partnerships & MOU */}
-      <section className="p-rec-mou p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>Industry Partnerships</h2>
-          <p>Strategic collaborations for research, training, and innovation</p>
-        </div>
-        <div className="p-rec-mou-grid">
-          {mouPartners.map((partner, idx) => (
-            <div key={idx} className="p-rec-mou-card">
-              <img src={partner.logo} alt={partner.name} />
-              <span className="p-rec-mou-type">{partner.type}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Recruiter Resources */}
-      <section className="p-rec-downloads p-rec-reveal">
-        <div className="p-rec-section-header">
-          <h2>Recruiter Resources</h2>
-          <p>Download essential documents and forms</p>
-        </div>
-        <div className="p-rec-downloads-grid">
-          <button className="p-rec-download-card">
-            <span className="p-rec-download-icon">📄</span>
-            <h3>Recruiter Brochure</h3>
-            <p>Complete overview of our programs and facilities</p>
-          </button>
-          <button className="p-rec-download-card">
-            <span className="p-rec-download-icon">📘</span>
-            <h3>Placement Handbook</h3>
-            <p>Detailed placement process and guidelines</p>
-          </button>
-          <button className="p-rec-download-card">
-            <span className="p-rec-download-icon">📋</span>
-            <h3>Policy Document</h3>
-            <p>Placement policies and procedures</p>
-          </button>
-          <button className="p-rec-download-card">
-            <span className="p-rec-download-icon">✍️</span>
-            <h3>Registration Form</h3>
-            <p>Company registration for campus recruitment</p>
-          </button>
         </div>
       </section>
 
       <Footer />
-
-      {/* Testimonial Modal */}
-      {selectedTestimonial && (
-        <div
-          className="p-rec-modal-overlay"
-          onClick={closeTestimonial}
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="p-rec-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="p-rec-modal-close"
-              onClick={closeTestimonial}
-              aria-label="Close modal"
-            >
-              ×
-            </button>
-            <div className="p-rec-modal-header">
-              <img src={selectedTestimonial.photo} alt={selectedTestimonial.name} />
-              <div>
-                <h3>{selectedTestimonial.name}</h3>
-                <p>{selectedTestimonial.designation}</p>
-                <p className="p-rec-modal-company">{selectedTestimonial.company}</p>
-              </div>
-            </div>
-            <div className="p-rec-modal-body">
-              <p>"{selectedTestimonial.fullQuote}"</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
