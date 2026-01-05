@@ -1,7 +1,7 @@
 // Recruiters.jsx
 import React, { useState } from 'react';
 import Footer from './Footer';
-import campusBackground from '../assets/Subtract.png';
+import campusBackground from '../assets/Background.png';
 import '../Styles/Recruiters.css';
 
 const Recruiters = () => {
