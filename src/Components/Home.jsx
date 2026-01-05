@@ -13,7 +13,7 @@ import LeftImage from "../Assets/hostel.jpg"; // replace with your actual image
 import LeftImage2 from "../Assets/library.jpg"; // replace with your actual image
 import RightImage from "../Assets/Frame.png"; // replace with your actual image
 import Footer from "./Footer";
-import CampusImage from "../Assets/360..png";
+import CampusImage from "../Assets/Vector/360..png";
 import Highlights from "./Highlights";
 import Placements from "./Placements";
 // Import multiple images
