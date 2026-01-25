@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Styles/Principles.css";
+import "../Styles/PrinciplesResponsive.css";
 import campusBackground from '../Assets/Background.png';
 import LeftImage from "../Assets/hostel.jpg";
 import LeftImage2 from "../Assets/hospital.jpg";
@@ -8,45 +9,45 @@ import Footer from './Footer';
 function Principles() {
   return (
     <>
-     <section className="hero-section">
-                          <div className="hero-background">
-                            <img src={campusBackground} alt="Campus Background" className="hero-bg-image" />
+     <section className="pr-hero-section">
+                          <div className="pr-hero-background">
+                            <img src={campusBackground} alt="Campus Background" className="pr-hero-bg-image" />
                           </div>
                   
-                          <div className="hero-content">
+                          <div className="pr-hero-content">
                   
                             {/* Hero Text */}
-                            <div className="hero-text">
-                              <h1 className="hero-title">Principle Desk</h1>
-                              <div className="breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>Home</a>{" "} &gt; {" "}<a href="/about-us" style={{ textDecoration:"none", color:"white"}}>About Us</a>
+                            <div className="pr-hero-text">
+                              <h1 className="pr-hero-title">Principle Desk</h1>
+                              <div className="pr-breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>Home</a>{" "} &gt; {" "}<a href="/about-us" style={{ textDecoration:"none", color:"white"}}>About Us</a>
                               {" "} &gt; {" "}<a href="/principal-desk" style={{ textDecoration:"none", color:"#f1c40f"}}>Principle's Desk</a>
                               </div>
-                              <p className="hero-description">
+                              <p className="pr-hero-description">
                                 If you are passionate and driven, explore our current openings across
                                 Hindusthan Institutions and apply.
                               </p>
                             </div>
                           </div>
                         </section>
-    <section className="why-section">
-                 <h2 className="why-title"  data-aos="fade-up">
-                    <span className="highlight">|</span> ABOUT THE PRINCIPAL
+    <section className="pr-why-section">
+                 <h2 className="pr-why-title"  data-aos="fade-up">
+                    <span className="pr-highlight">|</span> ABOUT THE PRINCIPAL
                   </h2>
-              <div className="why-container">
+              <div className="pr-why-container">
                 {/* Left Side Image */}
-                <div className="why-left" data-aos="fade-right">
-                  <div className="why-left-top">
+                <div className="pr-why-left" data-aos="fade-right">
+                  <div className="pr-why-left-top">
                   <img src={LeftImage} alt="Why Hindusthan" /></div>
-                  <div className="why-left-bottom">
+                  <div className="pr-why-left-bottom">
                   <img src={LeftImage2} alt="Why Hindusthan" /></div>
-                  <div className="why-right-bottom">
+                  <div className="pr-why-right-bottom">
                   <img src={RightImage} alt="Why Hindusthan" /></div>
                 </div>
         
                 {/* Right Side Content */}
-                <div className="why-right" data-aos="fade-right">
+                <div className="pr-why-right" data-aos="fade-right">
                    <h2  data-aos="fade-up">
-                    <span className="highlight-head">|</span> Dr.C.Rameshkumar M.Tech (IIT-Delhi) MBA PhD
+                    <span className="pr-highlight-head">|</span> Dr.C.Rameshkumar M.Tech (IIT-Delhi) MBA PhD
 
                   </h2>
                   <p>
@@ -61,14 +62,14 @@ function Principles() {
                   </p>
                   <p>Beyond academics, Hindusthan supports cultural, sports, and extracurricular activities to shape overall personality. 
                     The campus life is vibrant, inclusive, and motivating, making students 
-                    feel at home while growing professionally. That’s why Hindusthan is a preferred choice for many.</p>
+                    feel at home while growing professionally. That's why Hindusthan is a preferred choice for many.</p>
                 </div>
               </div>
             </section>
-            <section className="principal-container">
-                <div className="principal-message">
-                    <h2 data-aos = "fade-down"><span className='highlights'>|</span>What our Principal Says</h2>
-                    <div className="principal-hypothesize">
+            <section className="pr-principal-container">
+                <div className="pr-principal-message">
+                    <h2 data-aos = "fade-down"><span className='pr-highlights'>|</span>What our Principal Says</h2>
+                    <div className="pr-principal-hypothesize">
                         <p data-aos ="fade-up">It gives me immense pleasure to welcome you all to <b>Hindusthan College of Engineering, Ingur, Perundurai, Erode</b> — a place where dreams are shaped, talents are nurtured, and futures are built.
 </p>
                          <p data-aos ="fade-up">With the establishment of this institution under the <b>Hindusthan Educational and Charitable Trust,</b> we take pride in creating yet another temple of learning dedicated to excellence. Our commitment lies in setting new benchmarks, introducing innovative teaching methodologies, and guiding students on the path to success through quality education.

@@ -1,0 +1,602 @@
+/* ==========================================
+   OurInstitution.jsx - Responsive Styles
+   Prefix: oi-*
+   ========================================== */
+
+/* ===== BASE STYLES ===== */
+
+/* Hero Section */
+.oi-hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.oi-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.oi-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oi-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.oi-hero-text {
+  color: white;
+}
+
+.oi-hero-title {
+  font-family: 'Neuton', serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.oi-breadcrumb {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.oi-hero-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Why Section */
+.oi-why-section {
+  padding: 60px 80px;
+  background: #f8f8f8;
+}
+
+.oi-why-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.oi-why-left {
+  width: 100%;
+  max-width: 650px;
+  height: 450px;
+  position: relative;
+}
+
+.oi-why-left-top img {
+  position: absolute;
+  width: 100%;
+  max-width: 355px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.oi-why-left-bottom {
+  margin-top: 140px;
+  margin-left: 160px;
+}
+
+.oi-why-left-bottom img {
+  position: absolute;
+  width: 100%;
+  max-width: 445px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.oi-why-right-bottom {
+  margin-top: 230px;
+  margin-left: 0px;
+}
+
+.oi-why-right {
+  flex: 1;
+}
+
+.oi-why-title {
+  font-family: 'Neuton', serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0c1c3a;
+}
+
+.oi-why-title .oi-highlight {
+  color: #f4b400;
+  font-weight: bolder;
+  margin-right: 8px;
+  background-color: #f4b400;
+}
+
+.oi-why-right p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 23px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Courses Container */
+.oi-courses-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 80px;
+  background: #fff;
+}
+
+.oi-courses-card {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.oi-courses-card h3 {
+  font-family: 'Neuton', serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1e2a36;
+}
+
+.oi-courses-card ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.oi-courses-card li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.oi-courses-center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.oi-courses-center-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Institutions Wrapper */
+.oi-institutions-wrapper {
+  width: 100%;
+  margin-top: 100px;
+  background: #fff;
+  padding: 60px 80px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.oi-institution-header {
+  margin-bottom: 30px;
+}
+
+.oi-institution-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e2a36;
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+}
+
+.oi-left-border h2::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  height: 100%;
+  background: #f4b400;
+}
+
+.oi-right-border h2::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  height: 100%;
+  background: #f4b400;
+}
+
+.oi-institution.oi-reverse {
+  background-color: #f8f8f8;
+}
+
+.oi-institution-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.oi-institution-content.oi-reverse {
+  flex-direction: row;
+}
+
+.oi-institution-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.oi-institution-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.oi-institution-text {
+  flex: 2;
+}
+
+.oi-institution-text ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.oi-institution-text li {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #1e2a36;
+}
+
+.oi-institution-text strong {
+  color: #000;
+}
+
+.oi-institution-header.oi-right-border {
+  text-align: right;
+}
+
+/* ==========================================
+   RESPONSIVE STYLES
+   ========================================== */
+
+/* ===== TABLET (481px - 768px) ===== */
+@media (max-width: 768px) {
+  .oi-hero-section {
+    height: 50vh;
+  }
+
+  .oi-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .oi-breadcrumb {
+    font-size: 0.95rem;
+  }
+
+  .oi-hero-description {
+    font-size: 1rem;
+  }
+
+  .oi-why-section {
+    padding: 40px;
+  }
+
+  .oi-why-title {
+    font-size: 36px;
+  }
+
+  .oi-why-container {
+    flex-direction: column;
+  }
+
+  .oi-why-left {
+    max-width: 100%;
+    height: 350px;
+  }
+
+  .oi-why-left-top img {
+    max-width: 280px;
+    height: 220px;
+  }
+
+  .oi-why-left-bottom {
+    margin-top: 100px;
+    margin-left: 120px;
+  }
+
+  .oi-why-left-bottom img {
+    max-width: 350px;
+    height: 240px;
+  }
+
+  .oi-why-right p {
+    font-size: 18px;
+  }
+
+  .oi-courses-container {
+    grid-template-columns: 1fr;
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .oi-courses-center-icon {
+    display: none;
+  }
+
+  .oi-institutions-wrapper {
+    padding: 40px;
+    margin-top: 60px;
+  }
+
+  .oi-institution-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .oi-institution-content.oi-reverse {
+    flex-direction: column;
+  }
+
+  .oi-institution-image img {
+    max-width: 100%;
+  }
+}
+
+/* ===== SMALL LAPTOP (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .oi-hero-title {
+    font-size: 3rem;
+  }
+
+  .oi-why-section {
+    padding: 50px 60px;
+  }
+
+  .oi-why-title {
+    font-size: 40px;
+  }
+
+  .oi-why-left {
+    max-width: 500px;
+    height: 380px;
+  }
+
+  .oi-why-left-top img {
+    max-width: 300px;
+    height: 240px;
+  }
+
+  .oi-why-left-bottom {
+    margin-top: 120px;
+    margin-left: 140px;
+  }
+
+  .oi-why-left-bottom img {
+    max-width: 380px;
+    height: 260px;
+  }
+
+  .oi-why-right p {
+    font-size: 20px;
+  }
+
+  .oi-courses-container {
+    padding: 60px;
+    gap: 35px;
+  }
+
+  .oi-institutions-wrapper {
+    padding: 50px 60px;
+    margin-top: 80px;
+  }
+
+  .oi-institution-header h2 {
+    font-size: 20px;
+  }
+
+  .oi-institution-image img {
+    max-width: 320px;
+  }
+}
+
+/* ===== MOBILE (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .oi-hero-section {
+    height: 40vh;
+  }
+
+  .oi-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .oi-breadcrumb {
+    font-size: 0.85rem;
+  }
+
+  .oi-hero-description {
+    font-size: 0.9rem;
+  }
+
+  .oi-why-section {
+    padding: 20px;
+  }
+
+  .oi-why-title {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .oi-why-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .oi-why-left {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .oi-why-left-top {
+    width: 100%;
+  }
+
+  .oi-why-left-top img {
+    position: relative;
+    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .oi-why-left-bottom {
+    margin: 0;
+    width: 100%;
+  }
+
+  .oi-why-left-bottom img {
+    position: relative;
+    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin-left: 15%;
+    display: block;
+  }
+
+  .oi-why-right-bottom {
+    display: none;
+  }
+
+  .oi-why-right {
+    width: 100%;
+  }
+
+  .oi-why-right p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .oi-courses-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .oi-courses-card {
+    padding: 20px;
+  }
+
+  .oi-courses-card h3 {
+    font-size: 20px;
+  }
+
+  .oi-courses-card li {
+    font-size: 14px;
+  }
+
+  .oi-courses-center-icon {
+    display: none;
+  }
+
+  .oi-institutions-wrapper {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .oi-institution {
+    margin-bottom: 30px;
+  }
+
+  .oi-institution-header h2 {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .oi-left-border h2::before,
+  .oi-right-border h2::after {
+    display: none;
+  }
+
+  .oi-institution-header.oi-right-border {
+    text-align: left;
+  }
+
+  .oi-institution-content {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .oi-institution-content.oi-reverse {
+    flex-direction: column;
+  }
+
+  /* Show main institution image */
+  .oi-institution-image {
+    width: 100%;
+  }
+
+  .oi-institution-image img {
+    max-width: 100%;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .oi-institution-text {
+    width: 100%;
+  }
+
+  .oi-institution-text li {
+    font-size: 14px;
+  }
+
+  /* REMOVED: Unused CSS for deleted unprefixed institution sections */
+  /* Only oi- prefixed sections remain in the JSX */
+}

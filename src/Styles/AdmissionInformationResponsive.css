@@ -1,0 +1,742 @@
+/* ==========================================
+   AdmissionInformation.jsx - Responsive Hero Section
+   Prefix: adm-*
+   ========================================== */
+
+/* ===== BASE STYLES ===== */
+
+/* Hero Section */
+.adm-hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.adm-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.adm-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adm-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.adm-hero-text {
+  color: white;
+}
+
+.adm-hero-title {
+  font-family: 'Neuton', serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.adm-breadcrumb {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.adm-breadcrumb a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.adm-breadcrumb a:hover {
+  color: #f1c40f;
+}
+
+.adm-hero-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================
+   RESPONSIVE STYLES
+   ========================================== */
+
+/* ===== DESKTOP SMALL (1024px - 1280px) ===== */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  /* Timeline - Slightly reduced spacing for smaller desktops */
+  .timeline-container {
+    gap: 1.5rem !important;
+  }
+
+  .timeline-step {
+    min-width: 130px !important;
+  }
+
+  .step-number {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.4rem !important;
+  }
+
+  .step-content h4 {
+    font-size: 1.05rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.88rem !important;
+  }
+}
+
+/* ===== TABLET LANDSCAPE (769px - 1023px) ===== */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  /* Timeline - 2 columns layout with proper spacing */
+  .timeline-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.5rem !important;
+    justify-items: center !important;
+  }
+
+  .timeline-step {
+    width: 100% !important;
+    max-width: 280px !important;
+    min-width: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .step-number {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.4rem !important;
+    margin: 0 auto 0.8rem !important;
+  }
+
+  .step-content {
+    text-align: center !important;
+  }
+
+  .step-content h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ===== TABLET (481px - 768px) ===== */
+@media screen and (max-width: 768px) {
+  .adm-hero-section {
+    height: 50vh;
+  }
+
+  .adm-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .adm-breadcrumb {
+    font-size: 0.95rem;
+  }
+
+  .adm-hero-description {
+    font-size: 1rem;
+  }
+
+  /* Programs Grid - Stack on tablet */
+  .programs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .program-card {
+    padding: 1.5rem !important;
+  }
+
+  .program-card h3 {
+    font-size: 1.2rem !important;
+  }
+
+  /* Admission Timeline - Vertical list with number on left */
+  .timeline-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+  }
+
+  .timeline-step {
+    width: 100% !important;
+    min-width: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 1.2rem !important;
+    margin-bottom: 0 !important;
+    padding: 1rem !important;
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+  }
+
+  .step-number {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.4rem !important;
+  }
+
+  .step-content {
+    flex: 1 !important;
+    padding-top: 0.6rem !important;
+    text-align: left !important;
+  }
+
+  .step-content h4 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Documents Checklist - Single column */
+  .documents-checklist {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+  }
+
+  .checklist-item {
+    padding: 0.9rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Contact Cards - Single column */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .contact-card {
+    padding: 1.3rem !important;
+  }
+
+  .contact-card h4 {
+    font-size: 1.1rem !important;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Info Container Padding */
+  .admission-info-container {
+    padding: 3rem 1.5rem !important;
+  }
+
+  /* Section Title */
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  /* Info Sections */
+  .info-section {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ===== MOBILE (≤ 480px) ===== */
+@media screen and (max-width: 480px) {
+  .adm-hero-section {
+    height: 40vh;
+  }
+
+  .adm-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .adm-breadcrumb {
+    font-size: 0.85rem;
+  }
+
+  .adm-hero-description {
+    font-size: 0.9rem;
+  }
+
+  /* Programs Grid - Full width cards */
+  .programs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .program-card {
+    padding: 1.2rem !important;
+  }
+
+  .program-card h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .program-card p {
+    font-size: 0.9rem !important;
+  }
+
+  .card-icon {
+    font-size: 2.5rem !important;
+  }
+
+  /* Admission Timeline - Compact vertical with number on left */
+  .timeline-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+
+  .timeline-step {
+    width: 100% !important;
+    min-width: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 1rem !important;
+    margin-bottom: 0 !important;
+    padding: 0.9rem !important;
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+  }
+
+  .step-number {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.3rem !important;
+  }
+
+  .step-content {
+    flex: 1 !important;
+    padding-top: 0.5rem !important;
+    text-align: left !important;
+  }
+
+  .step-content h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Documents Checklist - Full width */
+  .documents-checklist {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+
+  .checklist-item {
+    padding: 0.8rem !important;
+    font-size: 0.9rem !important;
+    border-left-width: 3px !important;
+  }
+
+  /* Contact Cards - Full width */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+
+  .contact-card {
+    padding: 1.2rem !important;
+  }
+
+  .contact-card h4 {
+    font-size: 1rem !important;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Info Container - Reduced padding */
+  .admission-info-container {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Section Title - Smaller */
+  .section-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .section-title::after {
+    width: 40px !important;
+    height: 3px !important;
+  }
+
+  /* Info Sections - Reduced padding */
+  .info-section {
+    padding: 1.2rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* Eligibility Container */
+  .eligibility-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .eligibility-box {
+    padding: 1.2rem !important;
+  }
+
+  .eligibility-box h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .eligibility-list li {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  /* Table Responsive */
+  .table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .info-table {
+    font-size: 0.85rem !important;
+  }
+
+  .info-table th,
+  .info-table td {
+    padding: 0.7rem 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ===== VERY SMALL MOBILE (≤ 375px) ===== */
+@media screen and (max-width: 375px) {
+  .adm-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem !important;
+  }
+
+  .program-card {
+    padding: 1rem !important;
+  }
+
+  /* Timeline - Extra compact */
+  .timeline-step {
+    padding: 0.8rem !important;
+    gap: 0.8rem !important;
+  }
+
+  .step-number {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .step-content {
+    padding-top: 0.4rem !important;
+  }
+
+  .step-content h4 {
+    font-size: 0.95rem !important;
+  }
+
+  .step-content p {
+    font-size: 0.8rem !important;
+  }
+
+  .checklist-item {
+    padding: 0.7rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .contact-card {
+    padding: 1rem !important;
+  }
+}
+
+/* ==========================================
+   ADMISSION PROCEDURE - CARD DESIGN
+   Card-based responsive design
+   ========================================== */
+
+/* ===== BASE CARD STYLES ===== */
+
+.admission-steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admission-step-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 4px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.admission-step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00c9ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.admission-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.2);
+}
+
+.admission-step-card:hover::before {
+  transform: scaleX(1);
+}
+
+.step-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.step-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.step-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  position: relative;
+}
+
+.step-icon-circle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  z-index: -1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.step-icon-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Neuton', serif;
+}
+
+.step-card-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.step-card-title {
+  font-family: 'Neuton', serif;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.step-card-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: #718096;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== CARD RESPONSIVE STYLES ===== */
+
+/* Large Desktop */
+@media screen and (min-width: 1200px) {
+  .admission-steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .admission-steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .admission-steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .step-card-title {
+    font-size: 1.2rem;
+  }
+
+  .step-card-description {
+    font-size: 0.95rem;
+  }
+
+  .step-icon-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .step-icon-number {
+    font-size: 1.35rem;
+  }
+}
+
+/* Mobile Large */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .admission-steps-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-card-header {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .step-icon-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-icon-number {
+    font-size: 1.3rem;
+  }
+
+  .step-card-title {
+    font-size: 1.15rem;
+  }
+
+  .step-card-description {
+    font-size: 0.92rem;
+  }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+  .admission-steps-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-card-header {
+    padding: 1.1rem;
+    gap: 1rem;
+  }
+
+  .step-icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .step-icon-number {
+    font-size: 1.25rem;
+  }
+
+  .step-card-title {
+    font-size: 1.1rem;
+  }
+
+  .step-card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .admission-step-card {
+    border-left-width: 3px;
+  }
+}
+
+/* Mobile Extra Small */
+@media screen and (max-width: 375px) {
+  .step-card-header {
+    padding: 1rem;
+    gap: 0.9rem;
+  }
+
+  .step-icon-circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .step-icon-number {
+    font-size: 1.15rem;
+  }
+
+  .step-card-title {
+    font-size: 1.05rem;
+  }
+
+  .step-card-description {
+    font-size: 0.875rem;
+  }
+}

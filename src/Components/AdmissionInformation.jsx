@@ -1,5 +1,6 @@
 import React from 'react';
 import "../Styles/AdmissionInformation.css";
+import "../Styles/AdmissionInformationResponsive.css";
 import campusBackground from "../Assets/Background.png";
 import Footer from './Footer';
 
@@ -7,18 +8,18 @@ const AdmissionInformation = () => {
     return (
         <div className="admission-info-wrapper">
             {/* 1️⃣ Page Header (Hero Section) */}
-           <section className="hero-section">
-                   <div className="hero-background">
-                     <img src={campusBackground} alt="Campus Background" className="hero-bg-image" />
+           <section className="adm-hero-section">
+                   <div className="adm-hero-background">
+                     <img src={campusBackground} alt="Campus Background" className="adm-hero-bg-image" />
                    </div>
            
-                   <div className="hero-content">
+                   <div className="adm-hero-content">
            
                      {/* Hero Text */}
-                     <div className="hero-text">
-                       <h1 className="hero-title">Contact us</h1>
-                       <div className="breadcrumb"><a href="/">Home</a> &gt; <a href="/contact">Contact us</a></div>
-                       <p className="hero-description">
+                     <div className="adm-hero-text">
+                       <h1 className="adm-hero-title">Contact us</h1>
+                       <div className="adm-breadcrumb"><a href="/">Home</a> &gt; <a href="/contact">Contact us</a></div>
+                       <p className="adm-hero-description">
                          If you are passionate and driven, explore our current openings across
                          Hindusthan Institutions and apply.
                        </p>
@@ -89,50 +90,97 @@ const AdmissionInformation = () => {
                     </div>
                 </section>
 
-                {/* 4️⃣ Admission Procedure */}
+                {/* 4️⃣ Admission Procedure - NEW DESIGN */}
                 <section className="info-section">
                     <h2 className="section-title">Admission Procedure</h2>
-                    <div className="timeline-container">
-                        <div className="timeline-step">
-                            <div className="step-number">1</div>
-                            <div className="step-content">
-                                <h4>Online Registration</h4>
-                                <p>Register on our admission portal and fill out the application form.</p>
+                    <div className="admission-steps-container">
+                        {/* Step 1 */}
+                        <div className="admission-step-card" data-step="1">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">1</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Online Registration</h3>
+                                    <p className="step-card-description">Register on our admission portal and fill out the application form.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-step">
-                            <div className="step-number">2</div>
-                            <div className="step-content">
-                                <h4>Document Upload</h4>
-                                <p>Upload scanned copies of all necessary academic and personal documents.</p>
+
+                        {/* Step 2 */}
+                        <div className="admission-step-card" data-step="2">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">2</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Document Upload</h3>
+                                    <p className="step-card-description">Upload scanned copies of all necessary academic and personal documents.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-step">
-                            <div className="step-number">3</div>
-                            <div className="step-content">
-                                <h4>Counselling / Screening</h4>
-                                <p>Attend the counseling session or screening interview based on merit.</p>
+
+                        {/* Step 3 */}
+                        <div className="admission-step-card" data-step="3">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">3</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Counselling / Screening</h3>
+                                    <p className="step-card-description">Attend the counseling session or screening interview based on merit.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-step">
-                            <div className="step-number">4</div>
-                            <div className="step-content">
-                                <h4>Seat Allotment</h4>
-                                <p>Receive your provisional seat allotment letter upon selection.</p>
+
+                        {/* Step 4 */}
+                        <div className="admission-step-card" data-step="4">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">4</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Seat Allotment</h3>
+                                    <p className="step-card-description">Receive your provisional seat allotment letter upon selection.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-step">
-                            <div className="step-number">5</div>
-                            <div className="step-content">
-                                <h4>Fee Payment</h4>
-                                <p>Confirm your admission by paying the tuition and other fees.</p>
+
+                        {/* Step 5 */}
+                        <div className="admission-step-card" data-step="5">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">5</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Fee Payment</h3>
+                                    <p className="step-card-description">Confirm your admission by paying the tuition and other fees.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="timeline-step">
-                            <div className="step-number">6</div>
-                            <div className="step-content">
-                                <h4>Final Enrollment</h4>
-                                <p>Submit original documents and complete the enrollment process.</p>
+
+                        {/* Step 6 */}
+                        <div className="admission-step-card" data-step="6">
+                            <div className="step-card-header">
+                                <div className="step-icon-wrapper">
+                                    <div className="step-icon-circle">
+                                        <span className="step-icon-number">6</span>
+                                    </div>
+                                </div>
+                                <div className="step-card-content">
+                                    <h3 className="step-card-title">Final Enrollment</h3>
+                                    <p className="step-card-description">Submit original documents and complete the enrollment process.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

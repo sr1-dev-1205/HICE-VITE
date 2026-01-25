@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/OurInstitution.css";
-import "../Styles/Home.css"
+import "../Styles/OurInstitutionResponsive.css"
 import campusBackground from "../Assets/Background.png";
 import LeftImage from "../Assets/OurInstituition/lab.jpg";
 import LeftImage1 from "../Assets/OurInstituition/library.jpg";
@@ -13,19 +13,19 @@ const OurInstitution = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-background">
+      <section className="oi-hero-section">
+        <div className="oi-hero-background">
           <img
             src={campusBackground}
             alt="Campus Background"
-            className="hero-bg-image"
+            className="oi-hero-bg-image"
           />
         </div>
 
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">About Us</h1>
-            <div className="breadcrumb">
+        <div className="oi-hero-content">
+          <div className="oi-hero-text">
+            <h1 className="oi-hero-title">About Us</h1>
+            <div className="oi-breadcrumb">
               <a href="/" style={{ textDecoration: "none", color: "white" }}>
                 Home
               </a>{" "}
@@ -34,7 +34,7 @@ const OurInstitution = () => {
                 About Us
               </a>
             </div>
-            <p className="hero-description">
+            <p className="oi-hero-description">
               If you are passionate and driven, explore our current openings
               across Hindusthan Institutions and apply.
             </p>
@@ -42,23 +42,23 @@ const OurInstitution = () => {
         </div>
       </section>
 
-       <section className="why-section">
-              <h2 className="why-title"  data-aos="fade-up">
-                 <span className="highlight">|</span> OUR INSTITUTIONS
+       <section className="oi-why-section">
+              <h2 className="oi-why-title"  data-aos="fade-up">
+                 <span className="oi-highlight">|</span> OUR INSTITUTIONS
                </h2>
-           <div className="why-container">
+           <div className="oi-why-container">
              {/* Left Side Image */}
-             <div className="why-left" data-aos="fade-right">
-               <div className="why-left-top">
+             <div className="oi-why-left" data-aos="fade-right">
+               <div className="oi-why-left-top">
                <img src={LeftImage} alt="Why Hindusthan" /></div>
-               <div className="why-left-bottom">
+               <div className="oi-why-left-bottom">
                <img src={LeftImage1} alt="Why Hindusthan" /></div>
-               <div className="why-right-bottom">
+               <div className="oi-why-right-bottom">
                <img src={TrustVector} alt="Why Hindusthan" /></div>
              </div>
      
              {/* Right Side Content */}
-             <div className="why-right" data-aos="fade-right">
+             <div className="oi-why-right" data-aos="fade-right">
               
                <p>
                 Hindusthan is known for its strong academic foundation combined with modern infrastructure. 
@@ -72,14 +72,14 @@ const OurInstitution = () => {
                </p>
                <p>Beyond academics, Hindusthan supports cultural, sports, and extracurricular activities to shape overall personality. 
                  The campus life is vibrant, inclusive, and motivating, making students 
-                 feel at home while growing professionally. That’s why Hindusthan is a preferred choice for many.</p>
+                 feel at home while growing professionally. That's why Hindusthan is a preferred choice for many.</p>
              </div>
            </div>
          </section>
 
       {/* Courses Section */}
-      <div className="courses-container">
-        <div className="courses-card">
+      <div className="oi-courses-container">
+        <div className="oi-courses-card">
           <h3>Foundation And Vision</h3>
           <ul>
             <li>
@@ -89,7 +89,7 @@ const OurInstitution = () => {
             </li>
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="oi-courses-card">
           <h3>Entry Requirements</h3>
           <ul>
             <li>
@@ -101,14 +101,14 @@ const OurInstitution = () => {
             </li>
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="oi-courses-card">
           <h3>Course Duration And Intake</h3>
           <ul>
             <li>3 Years</li>
             <li>180 Intakes</li>
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="oi-courses-card">
           <h3>Industry Recognition</h3>
           <ul>
             <li>
@@ -117,17 +117,17 @@ const OurInstitution = () => {
             </li>
           </ul>
         </div>
-        <div className="courses-center-icon">
+        <div className="oi-courses-center-icon">
           <span>
             <img src={crown} alt="Crown" />
           </span>
         </div>
       </div>
 
-       <section className="institutions-wrapper">
+       <section className="oi-institutions-wrapper">
       {/* HICAS Section */}
-      <div className="institution">
-        <div className="institution-header left-border">
+      <div className="oi-institution">
+        <div className="oi-institution-header oi-left-border">
           <h2>
             HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
             <br />
@@ -135,12 +135,12 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content">
-          <div className="institution-image left">
+        <div className="oi-institution-content">
+          <div className="oi-institution-image oi-left">
             <img src={HicetImg} alt="HICAS visual" />
           </div>
 
-          <div className="institution-text right">
+          <div className="oi-institution-text oi-right">
             <ul>
               <li>
                 <strong>1998:</strong> Founded with an intake of 144 students,
@@ -161,16 +161,18 @@ const OurInstitution = () => {
               <li>
                 <strong>2024:</strong> Organized a Faculty Development Programme
                 on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
+                emphasizing the institution's commitment to faculty development.
               </li>
             </ul>
           </div>
         </div>
       </div>
 
+
+
       {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
+      <div className="oi-institution oi-reverse">
+        <div className="oi-institution-header oi-right-border">
           <h2>
             HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
             <br />
@@ -178,13 +180,13 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content reverse">
-          <div className="institution-text left">
+        <div className="oi-institution-content oi-reverse">
+          <div className="oi-institution-text oi-left">
             <ul>
               <li>
                 <strong>Academic Excellence:</strong> HITECH is affiliated with
                 Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
+                'A' grade accreditation, reflecting its quality education.
               </li>
               <li>
                 <strong>Infrastructure Development:</strong> The campus features
@@ -201,14 +203,14 @@ const OurInstitution = () => {
             </ul>
           </div>
 
-          <div className="institution-image right">
+          <div className="oi-institution-image oi-right">
             <img src={HicetImg} alt="HIT visual" />
           </div>
           
         </div>
       </div>
-        <div className="institution">
-        <div className="institution-header left-border">
+        <div className="oi-institution">
+        <div className="oi-institution-header oi-left-border">
           <h2>
             HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
             <br />
@@ -216,12 +218,12 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content">
-          <div className="institution-image left">
+        <div className="oi-institution-content">
+          <div className="oi-institution-image oi-left">
             <img src={HicetImg} alt="HICAS visual" />
           </div>
 
-          <div className="institution-text right">
+          <div className="oi-institution-text oi-right">
             <ul>
               <li>
                 <strong>1998:</strong> Founded with an intake of 144 students,
@@ -242,7 +244,7 @@ const OurInstitution = () => {
               <li>
                 <strong>2024:</strong> Organized a Faculty Development Programme
                 on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
+                emphasizing the institution's commitment to faculty development.
               </li>
             </ul>
           </div>
@@ -250,8 +252,8 @@ const OurInstitution = () => {
       </div>
 
       {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
+      <div className="oi-institution oi-reverse">
+        <div className="oi-institution-header oi-right-border">
           <h2>
             HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
             <br />
@@ -259,13 +261,13 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content reverse">
-          <div className="institution-text left">
+        <div className="oi-institution-content oi-reverse">
+          <div className="oi-institution-text oi-left">
             <ul>
               <li>
                 <strong>Academic Excellence:</strong> HITECH is affiliated with
                 Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
+                'A' grade accreditation, reflecting its quality education.
               </li>
               <li>
                 <strong>Infrastructure Development:</strong> The campus features
@@ -282,14 +284,14 @@ const OurInstitution = () => {
             </ul>
           </div>
 
-          <div className="institution-image right">
+          <div className="oi-institution-image oi-right">
             <img src={HicetImg} alt="HIT visual" />
           </div>
           
         </div>
       </div>
-        <div className="institution">
-        <div className="institution-header left-border">
+        <div className="oi-institution">
+        <div className="oi-institution-header oi-left-border">
           <h2>
             HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
             <br />
@@ -297,12 +299,12 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content">
-          <div className="institution-image left">
+        <div className="oi-institution-content">
+          <div className="oi-institution-image oi-left">
             <img src={HicetImg} alt="HICAS visual" />
           </div>
 
-          <div className="institution-text right">
+          <div className="oi-institution-text oi-right">
             <ul>
               <li>
                 <strong>1998:</strong> Founded with an intake of 144 students,
@@ -323,7 +325,7 @@ const OurInstitution = () => {
               <li>
                 <strong>2024:</strong> Organized a Faculty Development Programme
                 on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
+                emphasizing the institution's commitment to faculty development.
               </li>
             </ul>
           </div>
@@ -331,8 +333,8 @@ const OurInstitution = () => {
       </div>
 
       {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
+      <div className="oi-institution oi-reverse">
+        <div className="oi-institution-header oi-right-border">
           <h2>
             HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
             <br />
@@ -340,13 +342,13 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content reverse">
-          <div className="institution-text left">
+        <div className="oi-institution-content oi-reverse">
+          <div className="oi-institution-text oi-left">
             <ul>
               <li>
                 <strong>Academic Excellence:</strong> HITECH is affiliated with
                 Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
+                'A' grade accreditation, reflecting its quality education.
               </li>
               <li>
                 <strong>Infrastructure Development:</strong> The campus features
@@ -363,14 +365,14 @@ const OurInstitution = () => {
             </ul>
           </div>
 
-          <div className="institution-image right">
+          <div className="oi-institution-image oi-right">
             <img src={HicetImg} alt="HIT visual" />
           </div>
           
         </div>
       </div>
-        <div className="institution">
-        <div className="institution-header left-border">
+        <div className="oi-institution">
+        <div className="oi-institution-header oi-left-border">
           <h2>
             HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
             <br />
@@ -378,12 +380,12 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content">
-          <div className="institution-image left">
+        <div className="oi-institution-content">
+          <div className="oi-institution-image oi-left">
             <img src={HicetImg} alt="HICAS visual" />
           </div>
 
-          <div className="institution-text right">
+          <div className="oi-institution-text oi-right">
             <ul>
               <li>
                 <strong>1998:</strong> Founded with an intake of 144 students,
@@ -404,7 +406,7 @@ const OurInstitution = () => {
               <li>
                 <strong>2024:</strong> Organized a Faculty Development Programme
                 on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
+                emphasizing the institution's commitment to faculty development.
               </li>
             </ul>
           </div>
@@ -412,8 +414,8 @@ const OurInstitution = () => {
       </div>
 
       {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
+      <div className="oi-institution oi-reverse">
+        <div className="oi-institution-header oi-right-border">
           <h2>
             HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
             <br />
@@ -421,13 +423,13 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content reverse">
-          <div className="institution-text left">
+        <div className="oi-institution-content oi-reverse">
+          <div className="oi-institution-text oi-left">
             <ul>
               <li>
                 <strong>Academic Excellence:</strong> HITECH is affiliated with
                 Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
+                'A' grade accreditation, reflecting its quality education.
               </li>
               <li>
                 <strong>Infrastructure Development:</strong> The campus features
@@ -444,14 +446,13 @@ const OurInstitution = () => {
             </ul>
           </div>
 
-          <div className="institution-image right">
+          <div className="oi-institution-image oi-right">
             <img src={HicetImg} alt="HIT visual" />
           </div>
           
         </div>
-      </div>
-        <div className="institution">
-        <div className="institution-header left-border">
+      </div>  <div className="oi-institution">
+        <div className="oi-institution-header oi-left-border">
           <h2>
             HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
             <br />
@@ -459,12 +460,12 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content">
-          <div className="institution-image left">
+        <div className="oi-institution-content">
+          <div className="oi-institution-image oi-left">
             <img src={HicetImg} alt="HICAS visual" />
           </div>
 
-          <div className="institution-text right">
+          <div className="oi-institution-text oi-right">
             <ul>
               <li>
                 <strong>1998:</strong> Founded with an intake of 144 students,
@@ -485,7 +486,7 @@ const OurInstitution = () => {
               <li>
                 <strong>2024:</strong> Organized a Faculty Development Programme
                 on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
+                emphasizing the institution's commitment to faculty development.
               </li>
             </ul>
           </div>
@@ -493,8 +494,8 @@ const OurInstitution = () => {
       </div>
 
       {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
+      <div className="oi-institution oi-reverse">
+        <div className="oi-institution-header oi-right-border">
           <h2>
             HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
             <br />
@@ -502,13 +503,13 @@ const OurInstitution = () => {
           </h2>
         </div>
 
-        <div className="institution-content reverse">
-          <div className="institution-text left">
+        <div className="oi-institution-content oi-reverse">
+          <div className="oi-institution-text oi-left">
             <ul>
               <li>
                 <strong>Academic Excellence:</strong> HITECH is affiliated with
                 Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
+                'A' grade accreditation, reflecting its quality education.
               </li>
               <li>
                 <strong>Infrastructure Development:</strong> The campus features
@@ -525,93 +526,14 @@ const OurInstitution = () => {
             </ul>
           </div>
 
-          <div className="institution-image right">
-            <img src={HicetImg} alt="HIT visual" />
-          </div>
-          
-        </div>
-      </div>  <div className="institution">
-        <div className="institution-header left-border">
-          <h2>
-            HINDUSTHAN COLLEGE OF ARTS & SCIENCE (HICAS),
-            <br />
-            COIMBATORE
-          </h2>
-        </div>
-
-        <div className="institution-content">
-          <div className="institution-image left">
-            <img src={HicetImg} alt="HICAS visual" />
-          </div>
-
-          <div className="institution-text right">
-            <ul>
-              <li>
-                <strong>1998:</strong> Founded with an intake of 144 students,
-                HICAS has grown to accommodate over 9,300 students annually
-                across various academic programs.
-              </li>
-              <li>
-                <strong>2015:</strong> Achieved autonomous status, allowing the
-                institution to design its own curriculum and conduct
-                examinations independently, while still awarding degrees
-                conferred by Bharathiar University.
-              </li>
-              <li>
-                <strong>2021:</strong> Launched the Hindusthan International
-                Research Academy (HIRA), a significant milestone in fostering
-                research and innovation.
-              </li>
-              <li>
-                <strong>2024:</strong> Organized a Faculty Development Programme
-                on Emotional Intelligence and Resiliency in Higher Education,
-                emphasizing the institution’s commitment to faculty development.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* HIT Section */}
-      <div className="institution reverse">
-        <div className="institution-header right-border">
-          <h2>
-            HINDUSTHAN INSTITUTE OF TECHNOLOGY (HIT),
-            <br />
-            COIMBATORE
-          </h2>
-        </div>
-
-        <div className="institution-content reverse">
-          <div className="institution-text left">
-            <ul>
-              <li>
-                <strong>Academic Excellence:</strong> HITECH is affiliated with
-                Anna University and recognized by AICTE. It holds NBA and NAAC
-                ‘A’ grade accreditation, reflecting its quality education.
-              </li>
-              <li>
-                <strong>Infrastructure Development:</strong> The campus features
-                modern classrooms, laboratories, library, sports facilities,
-                hostels, and transportation. It provides a conducive environment
-                for learning and growth.
-              </li>
-              <li>
-                <strong>Industry Collaboration & Placements:</strong> HITECH has
-                partnerships with leading industries for internships and
-                placements, ensuring successful recruitment and strong
-                industry-oriented skills.
-              </li>
-            </ul>
-          </div>
-
-          <div className="institution-image right">
+          <div className="oi-institution-image oi-right">
             <img src={HicetImg} alt="HIT visual" />
           </div>
           
         </div>
       </div>
     </section>
+
       <Footer/>
     </>
   );
