@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef} from "react";
 import { useInView } from "react-intersection-observer";
 import '../Styles/AboutInstitutionSection.css';
+import '../Styles/AboutInstitutionResponsive.css';
 import campusBackground from "../Assets/Background.png";
 import LeftImage from "../Assets/AboutInstituition/hospital.jpg";
 import LeftImage2 from '../Assets/AboutInstituition/hostel.jpg';
@@ -73,41 +74,41 @@ const AboutInstitutionSection = () => {
     <div>
 
         {/* Hero Section */}
-                    <section className="hero-section">
-                      <div className="hero-background">
-                        <img src={campusBackground} alt="Campus Background" className="hero-bg-image" />
+                    <section className="ais-hero-section">
+                      <div className="ais-hero-background">
+                        <img src={campusBackground} alt="Campus Background" className="ais-hero-bg-image" />
                       </div>
               
-                      <div className="hero-content">
+                      <div className="ais-hero-content">
               
                         {/* Hero Text */}
-                        <div className="hero-text">
-                          <h1 className="hero-title">Our Trustee</h1>
-                          <div className="breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>About Us</a> &gt; <a href="/aboutHice" style={{ textDecoration:"none", color:"#f4b400"}}>About HICE</a></div>
-                          <p className="hero-description">
+                        <div className="ais-hero-text">
+                          <h1 className="ais-hero-title">Our Trustee</h1>
+                          <div className="ais-breadcrumb"><a href="/" style={{ textDecoration:"none", color:"white"}}>About Us</a> &gt; <a href="/aboutHice" style={{ textDecoration:"none", color:"#f4b400"}}>About HICE</a></div>
+                          <p className="ais-hero-description">
                             If you are passionate and driven, explore our current openings across
                             Hindusthan Institutions and apply.
                           </p>
                         </div>
                       </div>
                     </section>
-      <section className="why-section">
-             <h2 className="why-title"  data-aos="fade-up">
-                <span className="highlight">|</span> ABOUT HICE
+      <section className="ais-why-section">
+             <h2 className="ais-why-title"  data-aos="fade-up">
+                <span className="ais-highlight">|</span> ABOUT HICE
               </h2>
-          <div className="why-container">
+          <div className="ais-why-container">
             {/* Left Side Image */}
-            <div className="why-left" data-aos="fade-right">
-              <div className="why-left-top">
+            <div className="ais-why-left" data-aos="fade-right">
+              <div className="ais-why-left-top">
               <img src={LeftImage} alt="Why Hindusthan" /></div>
-              <div className="why-left-bottom">
+              <div className="ais-why-left-bottom">
               <img src={LeftImage2} alt="Why Hindusthan" /></div>
-              <div className="why-right-bottom">
+              <div className="ais-why-right-bottom">
               <img src={RightImage} alt="Why Hindusthan" /></div>
             </div>
     
             {/* Right Side Content */}
-            <div className="why-right" data-aos="fade-right">
+            <div className="ais-why-right" data-aos="fade-right">
              
               <p>
                Hindusthan is known for its strong academic foundation combined with modern infrastructure. 
@@ -121,13 +122,13 @@ const AboutInstitutionSection = () => {
               </p>
               <p>Beyond academics, Hindusthan supports cultural, sports, and extracurricular activities to shape overall personality. 
                 The campus life is vibrant, inclusive, and motivating, making students 
-                feel at home while growing professionally. That’s why Hindusthan is a preferred choice for many.</p>
+                feel at home while growing professionally. That's why Hindusthan is a preferred choice for many.</p>
             </div>
           </div>
         </section>
      {/* Courses Section */}
-      <div className="courses-container">
-        <div className="courses-card">
+      <div className="ais-courses-container">
+        <div className="ais-courses-card">
           <h3>Our Mission</h3>
           <ul>
             <li>
@@ -136,7 +137,7 @@ const AboutInstitutionSection = () => {
             </li>
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="ais-courses-card">
           <h3>Academic Excellence</h3>
           <ul>
             <li>
@@ -146,14 +147,14 @@ const AboutInstitutionSection = () => {
     
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="ais-courses-card">
           <h3>Course Duration And Intake</h3>
           <ul>
             <li>3 Years</li>
             <li>180 Intakes</li>
           </ul>
         </div>
-        <div className="courses-card">
+        <div className="ais-courses-card">
           <h3>Industry Recognition</h3>
           <ul>
             <li>
@@ -162,38 +163,38 @@ const AboutInstitutionSection = () => {
             </li>
           </ul>
         </div>
-        <div className="courses-center-icon">
+        <div className="ais-courses-center-icon">
           <span>
             <img src={crown} alt="Crown" />
           </span>
         </div>
       </div>
-     <section className="evaluation-section">
+     <section className="ais-evaluation-section">
       <SectionTitle
         text={"Hindusthan college of engineering,"}
         nextLineText={"Ingur"}
       />
-      <section className="evaluation-content">
-        <div className="evaluation-flex">
-          <div className="evaluation-image-container">
-            <div className="decorative-img-wrapper">
+      <section className="ais-evaluation-content">
+        <div className="ais-evaluation-flex">
+          <div className="ais-evaluation-image-container">
+            <div className="ais-decorative-img-wrapper">
               <img
                 src={HiceVector}
                 alt="Decorative background elements"
-                className="decorative-img"
+                className="ais-decorative-img"
               />
             </div>
 
-           <div className="image-place">
-             <img src={HiceImg} alt="HICE" className="placeholder-img" />
+           <div className="ais-image-place">
+             <img src={HiceImg} alt="HICE" className="ais-placeholder-img" />
            </div>
           </div>
 
-          <div className="evaluation-text">
-            <ul className="milestones-list">
+          <div className="ais-evaluation-text">
+            <ul className="ais-milestones-list">
               {milestonesData.map((item, index) => (
-                <li key={index} className="milestone-item">
-                  <strong className="milestone-year">{item.year}</strong>
+                <li key={index} className="ais-milestone-item">
+                  <strong className="ais-milestone-year">{item.year}</strong>
                   {item.text}
                 </li>
               ))}
@@ -201,7 +202,7 @@ const AboutInstitutionSection = () => {
           </div>
         </div>
       </section>
-      <div className="evaluation-bg">
+      <div className="ais-evaluation-bg">
         <PhotoGalleryLayoutBackground />
       </div>
     </section>

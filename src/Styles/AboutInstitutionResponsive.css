@@ -1,0 +1,577 @@
+/* ==========================================
+   AboutInstitutionSection.jsx - Responsive Styles
+   Prefix: ais-*
+   ========================================== */
+
+/* ===== BASE STYLES ===== */
+
+/* Hero Section */
+.ais-hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.ais-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ais-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ais-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.ais-hero-text {
+  color: white;
+}
+
+.ais-hero-title {
+  font-family: 'Neuton', serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ais-breadcrumb {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ais-hero-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Why Section */
+.ais-why-section {
+  padding: 60px 80px;
+  background: #f8f8f8;
+}
+
+.ais-why-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ais-why-left {
+  width: 100%;
+  max-width: 650px;
+  height: 450px;
+  position: relative;
+}
+
+.ais-why-left-top img {
+  position: absolute;
+  width: 100%;
+  max-width: 355px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.ais-why-left-bottom {
+  margin-top: 140px;
+  margin-left: 160px;
+}
+
+.ais-why-left-bottom img {
+  position: absolute;
+  width: 100%;
+  max-width: 445px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.ais-why-right-bottom {
+  margin-top: 230px;
+  margin-left: 0px;
+}
+
+.ais-why-right {
+  flex: 1;
+}
+
+.ais-why-title {
+  font-family: 'Neuton', serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0c1c3a;
+}
+
+.ais-why-title .ais-highlight {
+  color: #f4b400;
+  font-weight: bolder;
+  margin-right: 8px;
+  background-color: #f4b400;
+}
+
+.ais-why-right p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 23px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Courses Container */
+.ais-courses-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 80px;
+  background: #fff;
+}
+
+.ais-courses-card {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ais-courses-card h3 {
+  font-family: 'Neuton', serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1e2a36;
+}
+
+.ais-courses-card ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.ais-courses-card li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.ais-courses-center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.ais-courses-center-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Evaluation Section */
+.ais-evaluation-section {
+  position: relative;
+  padding: 40px;
+  margin-top: 20px;
+  z-index: -1;
+}
+
+.ais-evaluation-content {
+  padding: 12px 0 0px 0;
+  min-height: 480px;
+  z-index: 10;
+}
+
+.ais-evaluation-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-family: 'Outfit', sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .ais-evaluation-flex {
+    flex-direction: row;
+    gap: 80px;
+  }
+}
+
+.ais-evaluation-image-container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ais-decorative-img-wrapper {
+  position: absolute;
+  top: 76%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 50%;
+  z-index: 8;
+}
+
+@media (min-width: 1024px) {
+  .ais-decorative-img-wrapper {
+    left: 33%;
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.ais-decorative-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ais-image-place {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .ais-image-placeholder {
+    margin-bottom: 0;
+  }
+}
+
+.ais-placeholder-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.ais-evaluation-text {
+  width: 100%;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.ais-milestones-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ais-milestone-item {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  .ais-milestone-item {
+    font-size: 1.125rem;
+  }
+}
+
+.ais-milestone-year {
+  font-weight: bold;
+  color: #000;
+  margin-right: 4px;
+}
+
+.ais-evaluation-bg {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .ais-evaluation-bg {
+    top: 20%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE STYLES
+   ========================================== */
+
+/* ===== TABLET (481px - 768px) ===== */
+@media (max-width: 768px) {
+  .ais-hero-section {
+    height: 50vh;
+  }
+
+  .ais-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .ais-breadcrumb {
+    font-size: 0.95rem;
+  }
+
+  .ais-hero-description {
+    font-size: 1rem;
+  }
+
+  .ais-why-section {
+    padding: 40px;
+  }
+
+  .ais-why-title {
+    font-size: 36px;
+  }
+
+  .ais-why-container {
+    flex-direction: column;
+  }
+
+  .ais-why-left {
+    max-width: 100%;
+    height: 350px;
+  }
+
+  .ais-why-left-top img {
+    max-width: 280px;
+    height: 220px;
+  }
+
+  .ais-why-left-bottom {
+    margin-top: 100px;
+    margin-left: 120px;
+  }
+
+  .ais-why-left-bottom img {
+    max-width: 350px;
+    height: 240px;
+  }
+
+  .ais-why-right p {
+    font-size: 18px;
+  }
+
+  .ais-courses-container {
+    grid-template-columns: 1fr;
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .ais-courses-center-icon {
+    display: none;
+  }
+
+  .ais-evaluation-section {
+    padding: 30px;
+  }
+
+  .ais-evaluation-flex {
+    gap: 30px;
+  }
+}
+
+/* ===== SMALL LAPTOP (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ais-hero-title {
+    font-size: 3rem;
+  }
+
+  .ais-why-section {
+    padding: 50px 60px;
+  }
+
+  .ais-why-title {
+    font-size: 40px;
+  }
+
+  .ais-why-left {
+    max-width: 500px;
+    height: 380px;
+  }
+
+  .ais-why-left-top img {
+    max-width: 300px;
+    height: 240px;
+  }
+
+  .ais-why-left-bottom {
+    margin-top: 120px;
+    margin-left: 140px;
+  }
+
+  .ais-why-left-bottom img {
+    max-width: 380px;
+    height: 260px;
+  }
+
+  .ais-why-right p {
+    font-size: 20px;
+  }
+
+  .ais-courses-container {
+    padding: 60px;
+    gap: 35px;
+  }
+
+  .ais-evaluation-section {
+    padding: 35px;
+  }
+
+  .ais-evaluation-flex {
+    gap: 60px;
+  }
+}
+
+/* ===== MOBILE (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .ais-hero-section {
+    height: 40vh;
+  }
+
+  .ais-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .ais-breadcrumb {
+    font-size: 0.85rem;
+  }
+
+  .ais-hero-description {
+    font-size: 0.9rem;
+  }
+
+  .ais-why-section {
+    padding: 20px;
+  }
+
+  .ais-why-title {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .ais-why-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ais-why-left {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .ais-why-left-top {
+    width: 100%;
+  }
+
+  .ais-why-left-top img {
+    position: relative;
+    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .ais-why-left-bottom {
+    margin: 0;
+    width: 100%;
+  }
+
+  .ais-why-left-bottom img {
+    position: relative;
+    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin-left: 15%;
+    display: block;
+  }
+
+  .ais-why-right-bottom {
+    display: none;
+  }
+
+  .ais-why-right {
+    width: 100%;
+  }
+
+  .ais-why-right p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .ais-courses-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .ais-courses-card {
+    padding: 20px;
+  }
+
+  .ais-courses-card h3 {
+    font-size: 20px;
+  }
+
+  .ais-courses-card li {
+    font-size: 14px;
+  }
+
+  .ais-courses-center-icon {
+    display: none;
+  }
+
+  .ais-evaluation-section {
+    padding: 20px;
+  }
+
+  .ais-evaluation-flex {
+    gap: 20px;
+  }
+
+  .ais-milestone-item {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
